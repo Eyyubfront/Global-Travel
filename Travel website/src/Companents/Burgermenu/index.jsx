@@ -60,15 +60,20 @@ const BurgerMenu = () => {
 </Stack>
 
 <Stack flexDirection="column" alignItems="center" gap="10px" >
+  <Link to="/logins" style={{textDecoration:"none"}}>
+  
               <Button sx={{ color: "white", width: "50px" }} variant="text">
                 Login
               </Button>
+  </Link>
 
 
+<Link to="/signs" style={{textDecoration:"none"}}>
 
               <Button variant="text" sx={{ width: "100px", color: "black", backgroundColor: "white" }}>
                 Sign up
               </Button>
+</Link>
             </Stack>
 
             <Box>
