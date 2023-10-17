@@ -1,0 +1,663 @@
+*{
+    margin: 0;
+}
+
+.favrthov:hover{
+    background-color: black;
+    color:white;
+    width: 100%;
+    height: 100%;
+}
+
+.favrthova:hover{
+    background-color: red;
+    color: black;
+}
+.personboxs{
+    position: absolute;
+    top: 15% ;
+    right: 40px;
+    z-index: 9999;
+    background-color: white;
+}
+
+.swiper-slide {
+   
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+}
+
+.packinghotel{
+    margin-top: 12% !important;
+}
+
+.acountcolor{
+    color: #8DD3BB;
+}
+.bordercustm {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='%238DD3BBFF' stroke-width='4' stroke-dasharray='23%2c 11' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 30px;
+    width: 30%;
+ }
+
+
+
+@media (max-width: 1200px) {
+    .Container {
+      max-width: 960px;
+    }
+
+   
+  }
+  
+  @media (max-width: 992px) {
+    .Container {
+      max-width: 720px;
+    }
+  
+    
+  }
+
+  
+  @media (max-width: 768px) {
+    .Container {
+      max-width: 540px;
+    }
+
+    .letsgos{
+        margin-top: 150% !important; 
+        text-align: center;
+    }
+
+   
+
+
+    .rewsbox{
+        width: 350px ;
+        margin: auto;
+        margin-top: 37px;
+    }
+
+
+
+    .texttsfiledcolumn{
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .boxicons{
+        display: flex;
+        flex-direction: column !important;
+        margin: auto;
+    }
+
+    .plantrip{
+        display: flex;
+        flex-direction: column !important;
+        margin: auto;
+        align-items: center;
+        gap: 15px  !important;
+    }
+
+    .twoboxs{
+        display: flex;
+        flex-direction: column !important;
+        margin: auto;
+        align-items: center;
+        gap: 15px  !important;
+    }
+
+    .seamorbtn{
+        margin-top: 20px;
+    }
+
+    .onestextsdfiled{
+        width: 100% !important;
+    }
+
+    .rewies{
+        width: 100% !important;
+      text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .txtsdpbox{
+        width: 100% !important;
+    }
+
+    .footerfinis{
+     
+      flex-direction: column !important;
+      gap: 10px;
+        text-align: center;
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+    }
+
+    .maketravel{
+        width: 100% !important;
+    }
+
+    .foterboxone{
+        width: 82% !important;
+        height: 200% !important;
+        padding: 10px !important;
+        margin-left: 25px !important;
+        margin-top: -29px !important;
+        text-align: center !important;
+    }
+
+    .boxsdonescolumn{
+        display: flex;
+        flex-direction: column  !important;
+    }
+
+    .sealsbtn{
+        width: 100% !important;
+    }
+
+    .hoteslsd{
+        width: 100% !important;
+    }
+
+    .hotesltextsd{
+        width: 240px  !important;
+    }
+
+    .iconsonesd{
+        display: none  !important;
+    }
+
+    .landingsmalbox{
+        height: 58% !important;
+        top:34%  !important;
+    width: 80% !important;
+    padding: 10px;
+    }
+
+
+    
+    .landingsmalboxa{
+        height: 66% !important;
+        top:54%  !important;
+    width: 80% !important;
+    padding: 10px;
+    }
+
+    .landingsmalboxb{
+        height: 75% !important;
+        top:48%  !important;
+    width: 80% !important;
+    padding: 10px;
+    }
+    .texttsfiledcolumna{
+        display: flex;
+        flex-direction: column !important;
+    }
+  
+
+  
+
+    .landingsmalboxc{
+        height: 59% !important;
+        top: 11% !important;
+        width: 80% !important;
+        padding: 10px;
+    }
+    .flylines{
+        width: 230px !important;
+    }
+    .sortbytxt{
+        display: flex;
+        flex-direction: row;
+        gap: 10% !important;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .bos{
+        width: 98% !important;
+    }
+    .hotelwordboxes{
+        width: 96% !important;
+    }
+
+    .hotelslistphotsrows{
+        display: flex;
+        flex-direction: column !important;
+        width: 100% !important;
+        align-items: center;
+    }
+
+    .mapsbutons{
+        width: 230px !important;
+    }
+    .roomscards{
+        display: flex;
+        flex-direction: column !important;
+        gap: 10px !important;
+        align-items: center; 
+        text-align: center !important;
+    }
+    .hotelslistcardscolmmn{
+        display: flex;
+        flex-direction: column !important;
+        width: 100% !important;
+        align-items: center;
+        gap: 10px !important;
+    }
+    .locationphotos{
+        width: 100% !important;
+    }
+    .textcentrs{
+        text-align: center !important;
+    }
+    .bigonehotels{
+        width: 100% !important;
+    }
+
+    .flyemirtexts{
+        display: flex;
+        flex-direction: column !important;
+       width: 100% !important;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        gap: 10px !important;
+    }
+
+    .worldboxsone{
+        display: flex;
+        align-items: center;
+       
+        flex-direction: column !important;
+    }
+    .chaeapboxs{
+        width: 75% !important;
+        margin: auto;
+    }
+    .boxsoneslines{
+        width:70% !important;
+        height: 0 !important;
+    }
+    
+
+    .adpromo{
+        margin-left: 10% !important;
+    }
+
+    .borderlins{
+        display: none;
+    }
+ .faltext{
+    text-align: center !important;
+ }
+ .letsgosz{
+    margin-top:30% !important; 
+    text-align: center;
+}
+}
+
+
+@media (max-width: 576px) {
+    .Container {
+      max-width: 100%;
+    }
+    .acountcent{
+        text-align: center !important;
+    }
+    .modalcards{
+        width: 95% !important;
+    }
+
+    .persondback{
+        width: 100% !important;
+    }
+
+    .flightcenter{
+        margin: auto !important;
+    }
+
+    .letsgosz{
+        margin-top:50% !important; 
+        text-align: center;
+    }
+    .manytrips{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    .payboxone{
+        width: 100% !important;
+    }
+    .bordercustm{
+        width: 100% !important;
+        padding: 15px !important;  
+    }
+    .paymentboxsd{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    .flightsboxsd{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    .ticketboxesd{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    .ticktetbox{
+        margin-top: 15px !important;
+        text-align: center !important;
+        width: 99% !important;
+        height: 100px !important;
+    }
+
+    .boking{
+        margin-top: 15px !important;
+        text-align: center !important;
+    }
+    .manylinz{
+        border: 1px solid !important;
+        width: 100px !important;
+        height: 0px !important;
+      
+     
+    }
+    .manylin{
+        display: none;
+    }
+    .acountcolor{
+        color: aqua;
+    }
+    .manytripsbox{
+        margin-top: 43% !important;
+        width: 97% !important;
+    }
+    .manytripsboxz{
+        margin-top: 43% !important;
+        width: 100% !important;
+    }
+    .dateicont{
+        margin-left: 40px !important;
+    }
+    .ticklines{
+        border: 1px solid darkgray;
+        height: 0px !important;
+        width: 200px !important;
+    }
+    .acaountchagng{
+        display: flex;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 10px !important;
+    }
+
+    .personjonphot{
+        top: 30% !important;
+        left: 40% !important;
+    }
+    .jonabouttexts{
+        top: 45% !important;
+        left: 40% !important;
+    }
+    .jonabouttextsz{
+        top: 52% !important;
+        left: 40% !important;
+    }
+    .packinghotel {
+        margin-top: 19% !important;
+      
+    }
+
+    .adloctn{
+        margin-top: -20px !important;
+    }
+
+    .mapsbutons{
+     display: flex !important;
+     flex-direction: column !important;
+     align-items: center !important;
+     margin-left: 10% !important;
+    }
+
+    .planephosts{
+        width: 100% !important;
+    }
+
+    .boks{
+        margin-top: 20px !important;
+    }
+    .listthrebox{
+        margin-top: 100% !important;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+.emiratesandicons{
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 8px !important;
+    margin-top: 5px !important;
+}
+.planepm{
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 5px !important;
+}
+.payboxs{
+    width: 95% !important;
+}
+.contunibtn{
+    width: 80% !important;
+    margin: auto !important;
+    margin-left: 30px !important;
+}
+
+.standarttexts{
+    text-align: center;
+    width: 100% !important;
+}
+
+.logintexts{
+    text-align: center !important;
+}
+.phonetextfiled{
+    width: 80% !important;
+    margin-left: 40px !important;
+}
+.recentphotos{
+    margin-top: 110% !important;
+    text-align: center !important;
+}
+.dolarssevens{
+    margin-left: -30px !important;
+}
+.listsalign{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+.iconboxsd{
+    width: 100px !important;
+}
+.orline{
+    width: 30% !important;
+}
+
+.restexts{
+    width: 100% !important;
+    margin-left: 40px !important;
+}
+.returntexts{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important;
+}
+.recentboxs{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important;
+    margin-top: 30px;
+    width: 100% !important;
+}
+.paswords{
+    display: flex !important;
+    flex-direction: column !important;
+    margin-left: 8% !important;
+}
+.sucses{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+.pasword{
+  
+    width: 300px !important;
+}
+.textscolumn{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+.orlin{
+    width: 130px !important;
+}
+.widthemail{
+    width: 100% !important;
+}
+.lognboxicon{
+    width: 100px !important;
+}
+
+.contunilogin{
+    width: 100% !important;
+}
+.logclas{
+    width: 100% !important;
+}
+.sucsesbtn{
+    align-items: center !important;
+}
+
+.paytwotexts{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important; 
+    align-items: center !important;
+}
+.loginresp{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important; 
+    align-items: center !important;
+}
+    .chechsboxs{
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        gap: 5px !important;
+    }
+    .listslines{
+        display: none !important;
+    }
+
+    .emojisd{
+        width: 200px !important;
+    }
+    .letsgoseal{
+        top: 156%;
+        width: 105px !important;
+        position: absolute !important;
+        right: 15px;
+    }
+
+
+    .linkbtuon{
+        position: absolute;
+        right: 10%;
+    }
+
+    .linkbtuonsz{
+        position: absolute;
+        right: 10%;
+        margin-top: 40px;
+    }
+    .booksonerespcolumn{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+align-items: center !important;
+    }
+    .retrunsboxs{
+        height: 80% !important;
+      
+    }
+    .econmy{
+        width: 100% !important;
+    }
+
+    .travelcardsd{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+align-items: center !important;
+    }
+
+    .packingsboxescolmn{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+align-items: center !important; 
+width: 89% !important;
+margin-top: 20% !important;
+    }
+
+   
+    .boxwidt{
+        width: 100% !important;
+    }
+    .backpaingcsboxs{
+        width: 90% !important;
+    }
+ .hotesltravels{
+    margin-top: 12% !important;
+ }
+
+   .fals{
+
+ text-align: center !important;
+   }
+
+   .faltext{
+    width: 100% !important;
+    text-align: center !important;
+ }
+}  

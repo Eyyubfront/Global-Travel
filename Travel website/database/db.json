@@ -1,0 +1,5 @@
+{
+    "tours": [
+        {"id":1,"title":"Lorem ipsum","imageUrl":"yourImagePath","descriptiom":"Lorem ipsum"}
+    ]
+}
