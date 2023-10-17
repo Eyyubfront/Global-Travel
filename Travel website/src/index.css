@@ -447,7 +447,7 @@
         margin-top: 20px !important;
     }
     .listthrebox{
-        margin-top: 100% !important;
+        margin-top: 110% !important;
         display: flex;
         flex-direction: column !important;
         align-items: center;
@@ -492,7 +492,7 @@
     text-align: center !important;
 }
 .dolarssevens{
-    margin-left: -30px !important;
+    margin-left: -45px !important;
 }
 .listsalign{
     display: flex !important;
