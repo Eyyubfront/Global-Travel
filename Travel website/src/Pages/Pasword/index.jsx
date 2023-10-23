@@ -38,10 +38,10 @@ Back to login
 <Typography  variant="h4">
 Forgot your password?
 </Typography>
-<Box >
+<Box className="emailttext" >
 
 <TextField
-className="emailttext"
+
           label="Email"
           id="outlined-start-adornment"
         style={{width:"270px"}}
