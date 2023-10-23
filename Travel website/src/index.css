@@ -67,7 +67,7 @@
       max-width: 540px;
     }
     .placego{
-        margin-top: 120% !important; 
+        margin-top: 123% !important; 
     }
 
     .letsgos{
@@ -204,7 +204,7 @@
     }
 
     .landingsmalboxb{
-        height: 75% !important;
+        height: 65% !important;
         top:48%  !important;
     width: 80% !important;
     padding: 10px;
@@ -620,7 +620,7 @@
         width: 200px !important;
     }
     .letsgoseal{
-        top: 155%;
+        top: 142%;
         width: 105px !important;
         position: absolute !important;
         right: 15px;
