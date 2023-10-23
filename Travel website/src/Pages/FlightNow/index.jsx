@@ -76,7 +76,6 @@ const FlightNow = () => {
       <Box>
       <HeadNav/>
 
-
         <Box >
           <Stack position="absolute" color='white' zIndex="999" top="15%" left="10%" >
 
@@ -234,7 +233,7 @@ const FlightNow = () => {
         </Container>
       </Box>
 
-      <Box marginTop="30px">
+      <Box className="photosloctresp" marginTop="30px">
         <img style={{ width: '100%' }} src={frame} alt="" />
       </Box>
 
@@ -254,7 +253,7 @@ const FlightNow = () => {
                 Fall into travel
               </Typography>
 
-              <Typography variant="h7">
+              <Typography className="goingtexts" variant="h7">
                 Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.
               </Typography>
             </Stack>

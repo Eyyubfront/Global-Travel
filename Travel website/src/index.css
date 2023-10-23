@@ -68,17 +68,27 @@
     }
 
     .letsgos{
-        margin-top: 150% !important; 
+        margin-top: 100% !important; 
         text-align: center;
     }
 
+    .letsgosb{
+        margin-top: 145% !important; 
+        text-align: center;
+    }
    
+    .photosloctresp{
+        margin-top: 55px !important;
+    }
 
 
     .rewsbox{
         width: 350px ;
         margin: auto;
         margin-top: 37px;
+    }
+    .goingtexts{
+        margin-top: 20px !important;
     }
 
 
@@ -488,7 +498,7 @@
     margin-left: 40px !important;
 }
 .recentphotos{
-    margin-top: 110% !important;
+    margin-top: 130% !important;
     text-align: center !important;
 }
 .dolarssevens{
@@ -508,7 +518,7 @@
 
 .restexts{
     width: 100% !important;
-    margin-left: 40px !important;
+
 }
 .returntexts{
     display: flex !important;
@@ -536,13 +546,27 @@
 }
 .pasword{
   
-    width: 300px !important;
+    width: 272px !important;
+    margin-left: -31px !important;
 }
+
 .textscolumn{
     display: flex !important;
     flex-direction: column !important;
     gap: 10px !important;
     text-align: center !important;
+    width: 100% !important;
+}
+.agre{
+    margin-left: 40px !important;
+}
+.submitbutons{
+    width: 100% !important;
+}
+.emailttext{
+    width: 100% !important;
+}
+.creatbtun{
     width: 100% !important;
 }
 .orlin{
@@ -593,7 +617,7 @@
         width: 200px !important;
     }
     .letsgoseal{
-        top: 156%;
+        top: 143%;
         width: 105px !important;
         position: absolute !important;
         right: 15px;

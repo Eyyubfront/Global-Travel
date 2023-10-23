@@ -35,7 +35,7 @@ Going somewhere to celebrate this season? Whether you’re going home or somewhe
 < Link className="linkbtuonsz" style={{color:"black",textDecoration:"none"}} to="/flightlist">
 
 
-            <Box className="letsgos">
+            <Box className="letsgosb">
               <Button  sx={{ border: "1px solid #8DD3BB",width:"100px", color: "black" }}>
                 See All
               </Button>

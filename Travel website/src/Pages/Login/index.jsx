@@ -54,7 +54,7 @@ Login
 
 <Box>
     
-<FormControl style={{width:"300px"}} variant="outlined">
+<FormControl style={{width:"271px"}} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"

@@ -158,7 +158,7 @@ Sign up
 </Stack>
 
 
-<Stack alignItems="center" flexDirection="row" gap="10px">
+<Stack className="agre" alignItems="center" flexDirection="row" gap="10px">
 <Checkbox {...label} />
 <Typography>
 I agree to all the Terms and Privacy Policies
@@ -166,7 +166,7 @@ I agree to all the Terms and Privacy Policies
 </Stack>
 
 
-<Link style={{textDecoration:"none"}} to="/sucsesacaount">
+<Link className="creatbtun" style={{textDecoration:"none"}} to="/sucsesacaount">
 
 <Button  className="contunilogin"  sx={{backgroundColor:"#8DD3BB",color:"black",width:"500px",textAlign:"center",marginTop:"10px"}}>
 Create account

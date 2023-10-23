@@ -41,6 +41,7 @@ Forgot your password?
 <Box >
 
 <TextField
+className="emailttext"
           label="Email"
           id="outlined-start-adornment"
         style={{width:"270px"}}
@@ -52,7 +53,7 @@ Forgot your password?
 
 
 
-<Link to="/paswordnews" style={{textDecoration:"none"}}>
+<Link className="submitbutons" to="/paswordnews" style={{textDecoration:"none"}}>
 
 <Button  className="contunilogin"  sx={{backgroundColor:"#8DD3BB",color:"black",width:"300px",textAlign:"center",marginTop:"10px"}}>
 Submit
