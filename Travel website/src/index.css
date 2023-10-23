@@ -66,6 +66,9 @@
     .Container {
       max-width: 540px;
     }
+    .placego{
+        margin-top: 120% !important; 
+    }
 
     .letsgos{
         margin-top: 100% !important; 
@@ -617,7 +620,7 @@
         width: 200px !important;
     }
     .letsgoseal{
-        top: 143%;
+        top: 155%;
         width: 105px !important;
         position: absolute !important;
         right: 15px;

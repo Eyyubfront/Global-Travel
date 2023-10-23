@@ -203,7 +203,7 @@ const FlightNow = () => {
           <Stack className="letsgobtnsds" flexDirection="row" justifyContent="space-between">
 
 
-            <Stack className="letsgos" flexDirection="column">
+            <Stack className="placego" flexDirection="column">
 
 
               <Typography variant="h4">
