@@ -1,0 +1,33 @@
+.travel-box {
+    background-repeat: no-repeat;
+    height: 360px;
+    width: 300px;
+    position: relative;
+}
+
+.travel-content {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    gap: 10px;
+}
+
+.travel-title {
+    color: white;
+}
+
+.travel-many {
+    display: flex;
+    flex-direction: row;
+    color: white; /* Ensure the color is white for visibility */
+}
+
+.travel-button {
+    border: 1px solid;
+    background-color: #8DD3BB !important;
+    color: black !important;
+    position: absolute;
+    top: 80%;
+    left: 20%;
+}

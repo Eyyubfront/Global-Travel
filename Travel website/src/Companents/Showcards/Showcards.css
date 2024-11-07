@@ -1,0 +1,47 @@
+.showcards-container {
+    margin-top: 40px;
+    justify-content: center;
+    gap: 20%;
+}
+
+.hotels-card {
+    background-size: cover;
+    position: relative;
+    width: 500px !important;
+    height: 390px !important;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.hotels-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.card-content {
+    position: absolute;
+    left: 140px;
+    top: 200px;
+}
+
+.card-title {
+    font-family: 'TradeGothic LT Extended', sans-serif; /* Ensure font is applied */
+    color: white;
+}
+
+.card-description {
+    margin-top: 10px; /* Space between title and description */
+    width: 300px !important;
+    color: white !important;
+}
+
+.card-button {
+    background-color: #8DD3BB !important; /* Button background color */
+    transition: background-color 0.3s; /* Smooth button effect */
+    width: 200px !important;
+    height: 50px !important;
+}
+
+.card-button:hover {
+    background-color: #7BC5A1; /* Darker shade on hover */
+}

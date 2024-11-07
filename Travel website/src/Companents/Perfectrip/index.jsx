@@ -1,40 +1,32 @@
-import { Stack, Typography ,Box} from "@mui/material"
+import React from 'react';
+import { Stack, Typography, Box, Button } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
+import './Perfecttrip.css'; // Import the CSS file
 
-const Perfecttrip=({src,tittle,text})=>{
-    return(
-        <>
-        <Box       
-   
-        border-radius= "16px"
-width="300px"
-padding="20px"
-boxShadow=" 0px 4px 16px 0px rgba(17, 34, 17, 0.05);" 
-                margin="10px"   
-        >
+const Perfecttrip = ({ src, title, id }) => {
+    const navigate = useNavigate();
 
+    const handleClick = () => {
+        navigate(`/city/${id}`);
+    };
+
+    return (
+        <Box className="perfecttrip-container" onClick={handleClick}>
             <Stack flexWrap="wrap" flexDirection="row" alignItems="center" gap="10px">
-
-
-<Box>
-    <img src={src} alt="" />
-</Box>
-
-<Stack flexDirection="column" gap="10px"> 
-<Typography sx={{fontFamily: "Montserrat"}}>
-    {tittle}
-</Typography>
-<Typography>
-    {text}
-</Typography>
-
-</Stack>
+                <Box>
+                    <img src={src} className="perfecttrip-image" alt={title} />
+                </Box>
+                <Stack flexDirection="column" gap="10px">
+                    <Typography className="perfecttrip-title">
+                        {title}
+                    </Typography>
+                    <Button className="perfecttrip-button">
+                        View Deals
+                    </Button>
+                </Stack>
             </Stack>
-
-
         </Box>
-        
-        </>
-    )
-}
+    );
+};
 
-export default Perfecttrip
+export default Perfecttrip;

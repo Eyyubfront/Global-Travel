@@ -1,163 +1,86 @@
 import BedIcon from '@mui/icons-material/Bed';
 import FlightIcon from '@mui/icons-material/Flight';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, Button } from "@mui/material";
 import BurgerMenu from "../../Companents/Burgermenu";
 import globlack from "../../assets/globblack.png";
-import personjon from "../../assets/personjon.png";
-import PersonIcon from '@mui/icons-material/Person';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import SettingsIcon from '@mui/icons-material/Settings';
-import AddCardIcon from '@mui/icons-material/AddCard';
-import LogoutIcon from '@mui/icons-material/Logout';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-const HeadNav = () => {
-    const[open,SetOpen]=useState(false)
+
+const HeadNav = ({ user, setUser }) => {
+    const [open, setOpen] = useState(false);
+
+    const handleLogout = () => {
+        setUser(null); 
+    };
+    const userInitial = user ? user.email.charAt(0).toUpperCase() : '';
+
     return (
-        <>
-
-            <Stack padding="20px"  flexDirection="row" justifyContent="space-between">
-
-                <Stack className="iconsonesd" flexDirection="row" alignItems="center" gap="10px">
-                    <Stack gap="10px" alignItems="center" flexDirection="column">
-
+        <Stack padding="20px" flexDirection="row" justifyContent="space-between">
+            <Stack className="iconsonesd" flexDirection="row" alignItems="center" gap="10px">
+                <Stack gap="10px" alignItems="center" flexDirection="column">
+                    <Link style={{ cursor: "pointer", textDecoration: "none" }} to="/flightlist">
                         <Stack color="black" flexDirection="row" alignItems="center" gap="10px">
                             <FlightIcon />
-                            <Typography>
-                                Find Flight
-                            </Typography>
-
+                            <Typography>Find Flight</Typography>
                         </Stack>
-
-                        <Box position="absolute" top="74px" border="2px solid green" width="100px">
-
-                        </Box>
-
-                    </Stack>
-
-
+                    </Link>
+                </Stack>
+                <Box border="2px solid black" height="30px"></Box>
+                <Link style={{ cursor: "pointer", textDecoration: "none" }} to="/hotellist">
                     <Stack color="black" flexDirection="row" alignItems="center" gap="10px">
                         <BedIcon />
-                        <Typography>
-                            Find Stays
-                        </Typography>
-
+                        <Typography>Find Hotels</Typography>
                     </Stack>
-                </Stack>
+                </Link>
+            </Stack>
 
-
+            <Link to="/" style={{ cursor: "pointer" }}>
                 <Box>
                     <img src={globlack} alt="" />
                 </Box>
+            </Link>
 
-                <Stack className="iconsonesd" flexDirection="row" alignItems="center" gap="10px" >
-                    <Stack flexDirection="row" alignItems="center" gap="10px" >
-                        <FavoriteBorderIcon />
-                        <Typography>
-                            Favourites
-                        </Typography>
-                    </Stack>
-
-                    <Box
-                        border="1px solid"
-                        height="20px"
-                    >
-
+            <Stack className="iconsonesd" flexDirection="row" alignItems="center" gap="10px">
+                <Link to="/orders" style={{ cursor: "pointer", textDecoration: "none" }}>
+                    <Box color="black">
+                        <Typography>Orders</Typography>
                     </Box>
+                </Link>
 
-                    <Stack flexDirection="row" alignItems="center" gap="10px" >
-
-                        {
-                            open && <Box className="personboxs"  width="200px" boxShadow="0px 4px 16px 0px rgba(17, 34, 17, 0.05)" sx={{background:"#FFF"}} padding="20px">
-
-                            <Stack flexDirection="row" gap="10px">
-                                <img src={personjon} alt="" />
-                                <Typography>
-                                    Jon D.
-                                </Typography>
-                            </Stack>
-                            <Box marginTop="14px" border="1px solid darkgray" width="200px">
-
-                            </Box>
-
-                            <Stack marginTop="15px" justifyContent="space-between" flexDirection="row">
-                                <Link style={{textDecoration:"none",color:"black"}} to="/myacount">
-                                
-                                <Stack flexDirection="row" gap="15px">
-                                    <PersonIcon />
-                                    <Typography>
-                                        My account
-                                    </Typography>
-                                </Stack>
-                                </Link>
-                                <ChevronRightIcon />
-                            </Stack>
-
-
-                            <Stack marginTop="15px" justifyContent="space-between" flexDirection="row">
-                                <Stack flexDirection="row" gap="15px">
-                                    <SettingsIcon />
-                                    <Typography>
-                                        Settings
-                                    </Typography>
-                                </Stack>
-                                <ChevronRightIcon />
-                            </Stack>
-
-
-
-                            <Stack marginTop="15px" justifyContent="space-between" flexDirection="row">
-                                <Stack flexDirection="row" gap="15px">
-                                    <AddCardIcon />
-                                    <Typography>
-                                        Settings
-                                    </Typography>
-                                </Stack>
-                                <ChevronRightIcon />
-                            </Stack>
-                            <Box marginTop="14px" border="1px solid darkgray" width="200px">
-
-                            </Box>
-
-                            <Stack marginTop="15px" justifyContent="space-between" flexDirection="row">
-                                <Stack flexDirection="row" gap="15px">
-                                    <LogoutIcon />
-                                    <Typography>
-                                        Settings
-                                    </Typography>
-                                </Stack>
-                                <ChevronRightIcon />
-                            </Stack>
-
-
-                        </Box>
-                        }
-                        <Box onClick={(()=>SetOpen(!open))} className="personshov">
-
-                            <img src={personjon} alt="" />
-                        </Box>
-
-
-
-
-
-                        <Typography >
-                            Jon D.
-                        </Typography>
+                <Box border="1px solid" height="20px"></Box>
+                <Link to="/favourites" style={{ cursor: "pointer", textDecoration: "none" }}>
+                    <Stack color="black" flexDirection="row" alignItems="center" gap="10px">
+                        <FavoriteBorderIcon />
+                        <Typography>Favourites</Typography>
                     </Stack>
-                </Stack>
+                </Link>
 
+                <Box border="1px solid black" height="20px"></Box>
 
-
-
-
-
-                <BurgerMenu />
+                {user ? (
+                    <>
+                        <Typography variant="h6" sx={{ marginRight: 2 }}>{userInitial}</Typography>
+                    </>
+                ) : (
+                    <>
+                        <Link style={{ textDecoration: "none" }} to="/logins">
+                            <Button sx={{ color: "black", width: "50px" }} variant="text">
+                                Login
+                            </Button>
+                        </Link>
+                        <Link style={{ textDecoration: "none" }} to="/signs">
+                            <Button variant="text" sx={{ width: "100px", color: "white", backgroundColor: "black" }}>
+                                Sign up
+                            </Button>
+                        </Link>
+                    </>
+                )}
             </Stack>
 
-
-        </>
-    )
+            <BurgerMenu />
+        </Stack>
+    );
 }
-export default HeadNav
+
+export default HeadNav;

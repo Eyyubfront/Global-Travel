@@ -1,0 +1,10 @@
+.filter-container {
+    background-color: white;
+    margin-left: 10px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.filter-container .MuiTextField-root {
+    width: 200px;
+}

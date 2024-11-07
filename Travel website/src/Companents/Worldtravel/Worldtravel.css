@@ -1,0 +1,52 @@
+.worldtravel-container {
+    position: relative;
+}
+
+.notification {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid green;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.city-card {
+    border-radius: 12px;
+    width: 44%;
+    padding: 25px;
+    height: 122px;
+    box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.05);
+}
+
+.city-image {
+    width: 170px !important;
+    height: 140px !important;
+}
+.topflight_name{
+    margin-left: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.rating {
+    height: 20px;
+    border-radius: 10%;
+    border: 1px solid #8DD3BB;
+    padding: 10px;
+}
+
+.view-deals-button {
+    background-color: #8DD3BB !important;
+    width: 200px;
+    color: black !important;
+    border-radius: 4px;
+}

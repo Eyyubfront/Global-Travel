@@ -1,436 +1,102 @@
-import { Box, Button, Stack, TextField, Typography, MenuItem, Container, Grid } from "@mui/material"
-import Checkbox from '@mui/material/Checkbox';
+import React, { useState } from 'react';
+import { Box, Button, Stack, Typography, IconButton } from "@mui/material";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import flyemirates from "../../assets/emirates.png"
-import fly from "../../assets/fly.png"
-import qatar from "../../assets/qatar.png"
-import etihad from "../../assets/etihad.png"
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import { Link } from 'react-router-dom'
-import hotellistone from "../../assets/hotellistone.png"
-import hoteltwo from "../../assets/hoteltwo.png"
-import hotelthree from "../../assets/hotelthree.png"
-import hotelfor from "../../assets/hotelfor.png"
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CheckIcon from '@mui/icons-material/Check';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-const Hotelworld=()=>{
-    return(
-        <>
-<Box>
-
-
-
-
-
-
-<Stack gap="20px" flexDirection="column">
-
-
-<Box className="chaeapboxs" padding="10px" width="100%" borderRight="13px" boxShadow="0px 4px 16px 0px rgba(37, 34, 17, 0.05)">
-    <Stack className="worldboxsone" justifyContent="space-between" flexDirection="row" gap="15px">
-
-    <Stack flexDirection="column">
-<Typography>
-Cheapest
-</Typography>
-<Typography color="darkgray">
-$99.2h 18m
-</Typography>
-    </Stack>
-
-    <Box className="boxsoneslines"  height="44px" border="1px solid darkgray">
-
-    </Box>
-
-    <Stack flexDirection="column">
-<Typography>
-Best
-</Typography>
-<Typography color="darkgray">
-$99.2h 18m
-</Typography>
-    </Stack>
-    <Box  className="boxsoneslines"  height="44px" border="1px solid darkgray">
-
-    </Box>
-
-
-    <Stack flexDirection="column">
-<Typography>
-Quickest
-</Typography>
-<Typography color="darkgray">
-$99.2h 18m
-</Typography>
-    </Stack>
-    </Stack>
-
-
-</Box>
-
-<Stack className="sortbytxt" flexDirection="row" gap="30%" >
-    <Stack flexDirection="row" gap="3px">
-
-<Typography>
-Showing 4 of 
-</Typography>
-<Typography color="red">
- 257 places
-</Typography>
-    </Stack>
-
-    <Stack flexDirection="row" gap="6px">
-    Sort by Recommended <ArrowDownwardIcon/>
-    </Stack >
-</Stack>
-
-<Box
-className="hotelwordboxes"
-borderRadius= "12px"
-width="116%"
-padding="5px"
-height="30%"
-boxShadow= "0px 4px 16px 0px rgba(17, 34, 17, 0.05)"
-
->
-    <Stack className="flyemirtexts" gap="5%" flexDirection="row" >
-    <img height="100%"src={hotellistone} alt="" />
- 
-    <Stack className="listsalign" gap="2px" flexDirection="column">
-
-    <Stack className="flyemirtexts" alignItems="center" flexDirection="row" gap="20%">
-      <Typography variant="h5">
-        CVK Park Bosphurs Hotel
-      </Typography>
-      <Typography variant="h5" color="red">
-      $240/night
-      </Typography>
-
-    </Stack>
-
-    <Stack marginTop='10px' alignItems="center" flexDirection="row" gap="10px">
-        <AddLocationAltIcon className="adloctn"/>
-<Typography>
-Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437
-</Typography>
-    </Stack>
-
-    <Stack  marginTop="20px" alignItems="center" flexDirection="row" gap="10px">
-        <Stack alignItems="center" flexDirection="row" gap="10px" style={{color:"orange"}}>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-        </Stack>
-        <Typography>
-        5 Star Hotel
-        </Typography>
-    </Stack>
-
-
-
-    <Box marginTop="30px" className="flylines"  borderTop="1px solid" height="100px" >
-
-    </Box>
-
-
-<Stack marginTop="-30px" flexDirection="row" gap="20px">
-
-    <Box width="30px" height="30px" border="1px solid #8DD3BB">
-<FavoriteBorderIcon className="favrthov"/>
-    </Box>
-
-
-<Link style={{textDecoration:"none"}} to="/hotellistabout">
-
-    <Button   sx={{backgroundColor:"#8DD3BB",width:"200px",color:"black",borderRadius:"4px"}}>
-    View Deals
-    </Button>
-</Link>
-</Stack>
-
-
-
-
-    </Stack>
-
-
-
-
-    </Stack>
-
-
-</Box>
-
-
-<Box
-className="hotelwordboxes"
-borderRadius= "12px"
-width="116%"
-padding="5px"
-height="30%"
-boxShadow= "0px 4px 16px 0px rgba(17, 34, 17, 0.05)"
-
->
-    <Stack className="flyemirtexts" gap="5%" flexDirection="row" >
-    <img height="100%"src={hoteltwo} alt="" />
- 
-    <Stack className="listsalign" gap="2px" flexDirection="column">
-
-    <Stack className="flyemirtexts" alignItems="center" flexDirection="row" gap="20%">
-      <Typography variant="h5">
-        CVK Park Bosphurs Hotel
-      </Typography>
-      <Typography variant="h5" color="red">
-      $240/night
-      </Typography>
-
-    </Stack>
-
-    <Stack marginTop='10px' alignItems="center" flexDirection="row" gap="10px">
-        <AddLocationAltIcon className="adloctn"/>
-<Typography>
-Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437
-</Typography>
-    </Stack>
-
-    <Stack  marginTop="20px" alignItems="center" flexDirection="row" gap="10px">
-        <Stack alignItems="center" flexDirection="row" gap="10px" style={{color:"orange"}}>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-        </Stack>
-        <Typography>
-        5 Star Hotel
-        </Typography>
-    </Stack>
-
-
-
-    <Box marginTop="30px" className="flylines"  borderTop="1px solid" height="100px" >
-
-    </Box>
-
-
-<Stack marginTop="-30px" flexDirection="row" gap="20px">
-
-    <Box width="30px" height="30px" border="1px solid #8DD3BB">
-<FavoriteBorderIcon className="favrthov"/>
-    </Box>
-
-
-<Link style={{textDecoration:"none"}} to="/hotellistabout">
-
-    <Button   sx={{backgroundColor:"#8DD3BB",width:"200px",color:"black",borderRadius:"4px"}}>
-    View Deals
-    </Button>
-</Link>
-</Stack>
-
-
-
-
-    </Stack>
-
-
-
-
-    </Stack>
-
-
-</Box>
-<Box
-className="hotelwordboxes"
-borderRadius= "12px"
-width="116%"
-padding="5px"
-height="30%"
-boxShadow= "0px 4px 16px 0px rgba(17, 34, 17, 0.05)"
-
->
-    <Stack className="flyemirtexts" gap="5%" flexDirection="row" >
-    <img height="100%"src={hotelthree} alt="" />
- 
-    <Stack  className="listsalign" gap="2px" flexDirection="column">
-
-    <Stack className="flyemirtexts" alignItems="center" flexDirection="row" gap="20%">
-      <Typography variant="h5">
-        CVK Park Bosphurs Hotel
-      </Typography>
-      <Typography variant="h5" color="red">
-      $240/night
-      </Typography>
-
-    </Stack>
-
-    <Stack marginTop='10px' alignItems="center" flexDirection="row" gap="10px">
-        <AddLocationAltIcon className="adloctn"/>
-<Typography>
-Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437
-</Typography>
-    </Stack>
-
-    <Stack  marginTop="20px" alignItems="center" flexDirection="row" gap="10px">
-        <Stack alignItems="center" flexDirection="row" gap="10px" style={{color:"orange"}}>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-        </Stack>
-        <Typography>
-        5 Star Hotel
-        </Typography>
-    </Stack>
-
-
-
-    <Box marginTop="30px" className="flylines"  borderTop="1px solid" height="100px" >
-
-    </Box>
-
-
-<Stack marginTop="-30px" flexDirection="row" gap="20px">
-
-    <Box width="30px" height="30px" border="1px solid #8DD3BB">
-<FavoriteBorderIcon className="favrthov"/>
-    </Box>
-
-
-<Link style={{textDecoration:"none"}} to="/hotellistabout">
-
-    <Button   sx={{backgroundColor:"#8DD3BB",width:"200px",color:"black",borderRadius:"4px"}}>
-    View Deals
-    </Button>
-</Link>
-</Stack>
-
-
-
-
-    </Stack>
-
-
-
-
-    </Stack>
-
-
-</Box>
-<Box
-className="hotelwordboxes"
-borderRadius= "12px"
-width="116%"
-padding="5px"
-height="30%"
-boxShadow= "0px 4px 16px 0px rgba(17, 34, 17, 0.05)"
-
->
-    <Stack className="flyemirtexts" gap="5%" flexDirection="row" >
-    <img height="100%"src={hotelfor} alt="" />
- 
-    <Stack className="listsalign" gap="2px" flexDirection="column">
-
-    <Stack className="flyemirtexts" alignItems="center" flexDirection="row" gap="20%">
-      <Typography variant="h5">
-        CVK Park Bosphurs Hotel
-      </Typography>
-      <Typography variant="h5" color="red">
-      $240/night
-      </Typography>
-
-    </Stack>
-
-    <Stack marginTop='10px' alignItems="center" flexDirection="row" gap="10px">
-        <AddLocationAltIcon className="adloctn"/>
-<Typography>
-Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437
-</Typography>
-    </Stack>
-
-    <Stack  marginTop="20px" alignItems="center" flexDirection="row" gap="10px">
-        <Stack alignItems="center" flexDirection="row" gap="10px" style={{color:"orange"}}>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-            <StarBorderIcon/>
-        </Stack>
-        <Typography>
-        5 Star Hotel
-        </Typography>
-    </Stack>
-
-
-
-    <Box marginTop="30px" className="flylines"  borderTop="1px solid" height="100px" >
-
-    </Box>
-
-
-<Stack marginTop="-30px" flexDirection="row" gap="20px">
-
-    <Box width="30px" height="30px" border="1px solid #8DD3BB">
-<FavoriteBorderIcon className="favrthov"/>
-    </Box>
-
-
-<Link style={{textDecoration:"none"}} to="/hotellistabout">
-
-    <Button   sx={{backgroundColor:"#8DD3BB",width:"200px",color:"black",borderRadius:"4px"}}>
-    View Deals
-    </Button>
-</Link>
-</Stack>
-
-
-
-
-    </Stack>
-
-
-
-
-    </Stack>
-
-
-</Box>
-<Link style={{textDecoration:"none"}} to="/hotellistabout">
-
-  
-<Button sx={{borderRadius:"4px",background:"#121",color:"white",width:"100%"}}>
-Show more results
-</Button>
-</Link>
-
-
-
-
-</Stack>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</Box>
-
-        
-        </>
-    )
+import { Link } from 'react-router-dom';
+import hotels from '../../data/hotel';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavorite, removeFavorite } from '../../features/favoritesSlice';
+import './Hotelworld.css'; // Import the CSS file
+
+const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
+    const dispatch = useDispatch();
+    const favorites = useSelector(state => state.favorites);
+    const [message, setMessage] = useState(null);
+    const [fadeOut, setFadeOut] = useState(false);
+
+    const filteredHotels = hotels.filter(hotel => {
+        const matchesPrice = priceFilter === 'all' ||
+            (priceFilter === 'ucuz' && hotel.price <= 250) ||
+            (priceFilter === 'bahali' && hotel.price > 250);
+        const matchesDays = daysValue === '' || hotel.days === parseInt(daysValue);
+        const matchesStars = starsValue === '' || hotel.stars === parseInt(starsValue);
+        return matchesPrice && matchesDays && matchesStars;
+    });
+
+    const handleAddToFavorites = (hotel) => {
+        if (favorites.some(fav => fav.id === hotel.id)) {
+            dispatch(removeFavorite(hotel.id));
+            setMessage('Favorilerden çıkarıldı');
+        } else {
+            dispatch(addFavorite({ ...hotel, type: 'hotel' }));
+            setMessage('Favorilere eklendi');
+        }
+        setFadeOut(false);
+        setTimeout(() => setFadeOut(true), 3000);
+    };
+
+    return (
+        <Box className="hotelworld-container">
+            {message && (
+                <Box className={`notification ${fadeOut ? 'fade-out' : ''}`}>
+                    <Stack flexDirection="row" alignItems="center">
+                        <CheckIcon style={{ color: 'green', marginRight: '5px' }} />
+                        <Typography variant="body2" color="green">{message}</Typography>
+                    </Stack>
+                </Box>
+            )}
+            <Box sx={{ marginLeft: "23px" }}>
+                <Typography className='hoteltop_name' variant="h4">Available Hotels</Typography>
+                <Stack gap="20px" flexDirection="row" flexWrap="wrap">
+                    {filteredHotels.map((hotel) => (
+                        <Box key={hotel.id} className="hotel-card">
+                            <Stack className="hotel-details" gap="5%" flexDirection="row">
+                                <img className="hotel-images" src={hotel.image} alt={hotel.name} />
+                                <Stack className="hotel-info" gap="2px" flexDirection="column">
+                                    <Stack flexDirection="row" alignItems="center" gap="15px">
+                                        <Typography variant="h5">{hotel.name}</Typography>
+                                        <Stack alignItems="center" flexDirection="column" gap="5px">
+                                            <Typography variant="h5" color="red">${hotel.price}</Typography>
+                                            <Typography variant="body1" align="center">for {hotel.days} days</Typography>
+                                        </Stack>
+                                    </Stack>
+                                    <Stack marginTop='10px' alignItems="center" flexDirection="row" gap="10px">
+                                        <AddLocationAltIcon />
+                                        <Typography>{hotel.location}</Typography>
+                                    </Stack>
+                                    <Stack marginTop="20px" alignItems="center" flexDirection="row" gap="10px">
+                                        <Stack alignItems="center" flexDirection="row" gap="10px" style={{ color: "orange" }}>
+                                            {[...Array(hotel.stars)].map((_, starIndex) => (
+                                                <StarBorderIcon key={starIndex} />
+                                            ))}
+                                        </Stack>
+                                        <Typography>{hotel.stars} Star Hotel</Typography>
+                                    </Stack>
+                                    <Stack marginTop="5px" flexDirection="row" gap="20px">
+                                        <IconButton onClick={() => handleAddToFavorites(hotel)} aria-label="toggle favorite">
+                                            {favorites.some(fav => fav.id === hotel.id) ? (
+                                                <FavoriteIcon style={{ color: 'red' }} />
+                                            ) : (
+                                                <FavoriteBorderIcon />
+                                            )}
+                                        </IconButton>
+                                        <Link style={{ textDecoration: "none" }} to={`/hotellistabout/${hotel.id}`}>
+                                            <Button className="view-deals-button">
+                                                View Deals
+                                            </Button>
+                                        </Link>
+                                    </Stack>
+                                </Stack>
+                            </Stack>
+                        </Box>
+                    ))}
+                </Stack>
+            </Box>
+        </Box>
+    );
 }
 
-export default Hotelworld
+export default Hotelworld;

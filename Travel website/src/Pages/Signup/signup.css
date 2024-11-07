@@ -1,0 +1,24 @@
+.signup-container {
+    margin: 20px;
+}
+
+.login-image {
+   height: 480px;
+}
+
+.logo-image {
+    width: 150px;
+}
+
+.inputs-column {
+    gap: 30px;
+}
+
+.input-field {
+    width: 500px;
+}
+
+.create-button {
+    background-color: #8DD3BB !important;
+    color: black !important;
+}

@@ -1,0 +1,54 @@
+.hotelworld-container {
+    position: relative;
+}
+
+.notification {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid green;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.hotel-card {
+    border-radius: 12px;
+    width: 48%;
+    height: 190px !important;
+    padding: 5px;
+    box-shadow: 0px 4px 16px 0px rgb(17 34 17 / 9%);
+}
+.hoteltop_name{
+    margin-bottom: 20px !important;
+}
+
+.hotel-images {
+    width: 170px !important;
+    height: 150px !important;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+.hotel-details {
+    flex-direction: row;
+}
+
+.hotel-info {
+    flex-direction: column;
+}
+
+.view-deals-button {
+    background-color: #8DD3BB !important;
+    width: 200px;
+    color: black !important;
+    border-radius: 4px;
+}
