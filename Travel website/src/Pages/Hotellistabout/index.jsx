@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, removeFavorite } from '../../features/favoritesSlice';
 import { addOrder } from '../../features/ordersSlice';
 import OrderModal from '../../Companents/OrderModal'; // Modal'ı içe aktar
-import './Hotellistabout.css'; // CSS dosyasını ekliyoruz
+import './hotellistabout.css'; // CSS dosyasını ekliyoruz
 
 const Hotellistabout = () => {
     const { id } = useParams();
@@ -140,9 +140,7 @@ const Hotellistabout = () => {
                             {selectedHotel.description}
                         </Typography>
                     </Stack>
-                    <Stack className="hotel-features" marginTop="10px" flexDirection="row" gap="5%">
-                        {/* Otel özelliklerini burada göster */}
-                    </Stack>
+                 
                 </Container>
             </Box>
             <Footer />
