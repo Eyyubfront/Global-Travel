@@ -50,7 +50,9 @@ const Worldtravel = ({ priceFilter, priceValue, daysValue }) => {
         
             )}
               <Typography className='topflight_name' variant="h4">Available Flight</Typography>
-            <Stack gap="20px" flexDirection="row" flexWrap="wrap">
+            <Stack gap="20px" flexDirection="row" 
+    marginLeft= "24px"
+ flexWrap="wrap">
                 {filteredCities.map(city => (
                     <Box key={city.id} className="city-card">
                         
@@ -59,7 +61,7 @@ const Worldtravel = ({ priceFilter, priceValue, daysValue }) => {
                             <Stack gap="2px" flexDirection="column">
                                 <Typography variant="h6">{city.title}</Typography>
                                 <Stack alignItems="center" flexDirection="row" gap="20%">
-                                    <Stack flexDirection="row" gap="10px">
+                                    <Stack flexDirection="row" alignItems="center" gap="10px">
                                         <Typography className="rating">{city.rating}</Typography>
                                         <Typography width="200px">Very Good {city.reviews} reviews</Typography>
                                     </Stack>

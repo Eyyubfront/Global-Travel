@@ -1,10 +1,9 @@
 import React from 'react';
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import logostwo from "../../assets/Group.png";
 import emoji from "../../assets/inputsfooter/emoji.png";
 import './Footer.css'; // Import the CSS file
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -31,6 +30,26 @@ const Footer = () => {
           </Box>
         </Stack>
       </Box>
+      <Stack className="footer-services">
+      <Typography className='footer_text'>
+        Since 2000, we have been wholesale and retail high-quality tourism services, international travel packages and other travel products at the most reasonable prices.
+        </Typography>
+
+      <Box>
+        <h2>CUSTOMER SERVICES</h2>
+        <ul>
+      <li>
+
+        <Link className='foter_servicelinks' to="/about">About</Link>
+      </li>
+      <li>
+  
+        <Link className='foter_servicelinks' to="/contact">Contact</Link>
+      </li>
+    </ul>
+      </Box>
+
+      </Stack>
 
       <Stack className="footer-bottom">
         <Stack flexDirection="column" gap="10px">

@@ -17,21 +17,15 @@ const Loginspage = ({ setUser }) => {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
+
     const handleLogin = () => {
-        console.log(location.state); // State'in içeriğini kontrol et
         const { email: registeredEmail, password: registeredPassword, name: registeredName } = location.state || {};
 
-        console.log('Registered Email:', registeredEmail);
-        console.log('Registered Password:', registeredPassword);
-        console.log('Registered Name:', registeredName);
-        
         if (email === registeredEmail && password === registeredPassword) {
-            try {
-                setUser({ email, name: registeredName || 'Guest' });
-                navigate('/');
-            } catch (error) {
-                console.error("Error setting user:", error); // Hata mesajını göster
-            }
+            // Kullanıcı giriş yaptıysa bilgilerini localStorage'a kaydedelim
+            localStorage.setItem("user", JSON.stringify({ email, name: registeredName || 'Guest' }));
+            setUser({ email, name: registeredName || 'Guest' });
+            navigate('/');
         } else {
             alert("Email veya şifre yanlış!");
         }
@@ -43,14 +37,12 @@ const Loginspage = ({ setUser }) => {
                 <img src={loginphoto} alt="Login" />
             </Box>
             <Stack className="login-form" alignItems="center" gap="20px">
-               
                 <Typography variant="h4">Login</Typography>
-                <Box >
+                <Box>
                     <TextField
                         className="input-field"
                         id="outlined-basic"
                         label="Email"
-                   
                         variant="outlined"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -89,10 +81,7 @@ const Loginspage = ({ setUser }) => {
                         <Typography color="red">Forgot Password</Typography>
                     </Link>
                 </Stack>
-                <Button
-                    onClick={handleLogin}
-                    className="login-button"
-                >
+                <Button onClick={handleLogin} className="login-button">
                     Login
                 </Button>
                 <Stack flexDirection="row" gap="3px">

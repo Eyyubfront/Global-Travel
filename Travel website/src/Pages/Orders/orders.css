@@ -1,15 +1,17 @@
 .orders-container {
-    padding: 30px;
+ display: flex;
+ flex-direction: column;
+ padding: 15px;
 }
 
 .orders-list {
     margin-top: 20px;
-    padding-left: 20px;
+
     list-style-type: none; /* Madde işaretlerini kaldırmak için */
     display: flex  !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
-    gap: 40px;
+    gap: 10px;
 }
 
 .order-item {

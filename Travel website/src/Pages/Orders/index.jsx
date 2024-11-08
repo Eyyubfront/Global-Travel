@@ -21,7 +21,7 @@ const Orders = () => {
         <Typography variant="h4">Orders</Typography>
         <Box component="ul" className="orders-list">
           {orders.length === 0 ? (
-            <Typography variant="h6">You have no orders yet.</Typography>
+            <Typography >You have no orders yet.</Typography>
           ) : (
             orders.map(order => (
               <Box component="li" key={order.id} className="order-item">

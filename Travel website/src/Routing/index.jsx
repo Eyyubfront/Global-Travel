@@ -12,6 +12,8 @@ import CityDetail from "../Pages/CityDetail";
 import Favourites from "../Pages/Favourites";
 import Orders from "../Pages/Orders";
 import HeadNav from "../Companents/HeadNav";
+import About from "../Pages/About";
+import Contact from "../Pages/Contact";
 
 const Routing = ({ user, setUser }) => {
     console.log('User:', user);
@@ -22,6 +24,8 @@ const Routing = ({ user, setUser }) => {
             <Routes>
                 <Route path="/" element={<LandingPages />} />
                 <Route path="/flightlist" element={<Flightlist />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="/logins" element={<Loginspage setUser={setUser} />} />
                 <Route path="/signs" element={<Signup setUser={setUser} />} />
                 <Route path="/pasword" element={<Pasword />} />

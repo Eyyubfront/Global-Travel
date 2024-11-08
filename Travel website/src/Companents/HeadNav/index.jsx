@@ -1,19 +1,47 @@
+import { Box, Stack, Typography, Button, Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
 import BedIcon from '@mui/icons-material/Bed';
 import FlightIcon from '@mui/icons-material/Flight';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { Box, Stack, Typography, Button } from "@mui/material";
-import BurgerMenu from "../../Companents/Burgermenu";
 import globlack from "../../assets/globblack.png";
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import BurgerMenu from "../../Companents/Burgermenu";
+import { MdAddShoppingCart } from "react-icons/md";
 const HeadNav = ({ user, setUser }) => {
-    const [open, setOpen] = useState(false);
+    const [userInitial, setUserInitial] = useState(user ? user.email.charAt(0).toUpperCase() : '?');
 
+    const [openLogoutDialog, setOpenLogoutDialog] = useState(false); // Modal'ın açık mı olduğunu kontrol etmek için state
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const savedUser = localStorage.getItem("user");
+        if (savedUser) {
+            const parsedUser = JSON.parse(savedUser);
+            setUser(parsedUser);
+            setUserInitial(parsedUser.email.charAt(0).toUpperCase());
+        }
+    }, []);
+    
     const handleLogout = () => {
-        setUser(null); 
+        localStorage.removeItem("user"); // Kullanıcıyı çıkış yaparken localStorage'dan sil
+        setUser(null); // Kullanıcıyı sıfırlıyoruz
+        setOpenLogoutDialog(false); // Modal'ı kapatıyoruz
     };
-    const userInitial = user ? user.email.charAt(0).toUpperCase() : '';
+    
+
+    const handleProfileClick = () => {
+        if (user) {
+            navigate("/myacount");
+        }
+    };
+
+    const handleOpenLogoutDialog = () => {
+        setOpenLogoutDialog(true); // Modal'ı aç
+    };
+
+    const handleCloseLogoutDialog = () => {
+        setOpenLogoutDialog(false); // Modal'ı kapat
+    };
 
     return (
         <Stack padding="20px" flexDirection="row" justifyContent="space-between">
@@ -44,7 +72,8 @@ const HeadNav = ({ user, setUser }) => {
             <Stack className="iconsonesd" flexDirection="row" alignItems="center" gap="10px">
                 <Link to="/orders" style={{ cursor: "pointer", textDecoration: "none" }}>
                     <Box color="black">
-                        <Typography>Orders</Typography>
+                
+                        <MdAddShoppingCart style={{fontSize:"24px"}} />
                     </Box>
                 </Link>
 
@@ -52,7 +81,7 @@ const HeadNav = ({ user, setUser }) => {
                 <Link to="/favourites" style={{ cursor: "pointer", textDecoration: "none" }}>
                     <Stack color="black" flexDirection="row" alignItems="center" gap="10px">
                         <FavoriteBorderIcon />
-                        <Typography>Favourites</Typography>
+                        {/* <Typography>Favourites</Typography> */}
                     </Stack>
                 </Link>
 
@@ -60,7 +89,14 @@ const HeadNav = ({ user, setUser }) => {
 
                 {user ? (
                     <>
-                        <Typography variant="h6" sx={{ marginRight: 2 }}>{userInitial}</Typography>
+                        <Typography 
+                            variant="h6" 
+                            sx={{ marginRight: 2, cursor: 'pointer' }} 
+                            onClick={handleProfileClick}
+                        >
+                            {userInitial}
+                        </Typography>
+                        <Button sx={{ color: "black", cursor: "pointer" }} onClick={handleOpenLogoutDialog}>Logout</Button>
                     </>
                 ) : (
                     <>
@@ -79,6 +115,24 @@ const HeadNav = ({ user, setUser }) => {
             </Stack>
 
             <BurgerMenu />
+
+            {/* Logout Confirmation Dialog */}
+            <Dialog
+                open={openLogoutDialog}
+                onClose={handleCloseLogoutDialog}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">{"Are you sure you want to log out?"}</DialogTitle>
+                <DialogActions>
+                    <Button onClick={handleCloseLogoutDialog} color="primary">
+                        Cancel
+                    </Button>
+                    <Button onClick={handleLogout} color="primary" autoFocus>
+                        Logout
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </Stack>
     );
 }
