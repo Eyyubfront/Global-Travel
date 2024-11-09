@@ -10,8 +10,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, removeFavorite } from '../../features/favoritesSlice';
 import CheckIcon from '@mui/icons-material/Check';
 import { addOrder } from '../../features/ordersSlice';
-import OrderModal from '../../Companents/OrderModal'; // Modal'ı içe aktar
-import './CityDetail.css'; // CSS dosyasını ekliyoruz
+import OrderModal from '../../Companents/OrderModal';
+import './CityDetail.css';
 
 const CityDetail = () => {
     const { id } = useParams();
@@ -54,18 +54,17 @@ const CityDetail = () => {
             country: city.citycountry,
             city: city.name,
             quantity: quantity,
-            img: city.img, // Add the city image to the order data
+            img: city.img,
         };
     
         dispatch(addOrder(orderData));
         setModalOpen(false);
         setQuantity(1);
     };
-    
 
     return (
         <>
-            <Box sx={{ padding: "30px" }}>
+            <Box sx={{ padding: "30px", backgroundColor: "#f7f7f7", borderRadius: "10px", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)" }}>
                 {message && (
                     <Box className={`notification ${fadeOut ? 'fade-out' : ''}`}>
                         <Stack flexDirection="row" alignItems="center">
@@ -78,19 +77,19 @@ const CityDetail = () => {
                 <Stack alignItems="center" flexDirection="row" justifyContent="space-between">
                     <Stack flexDirection="column" gap="10px">
                         <Stack alignItems="center" flexDirection="row">
-                            <Typography variant="h4">{city.title}</Typography>
-                            <ArrowRightAltIcon />
-                            <Typography variant="h4">{city.citycountry}</Typography>
-                            <ArrowRightAltIcon />
+                            <Typography variant="h3" fontWeight="bold">{city.title}</Typography>
+                            <ArrowRightAltIcon sx={{ color: '#8DD3BB' }} />
+                            <Typography variant="h4" color="textSecondary">{city.citycountry}</Typography>
+                            <ArrowRightAltIcon sx={{ color: '#8DD3BB' }} />
                             <Typography color="red" variant="h6">Days: {city.days}</Typography>
                         </Stack>
                         <Stack flexDirection="row" alignItems="center" gap="10px">
                             <Box className="rating-badge">{city.rating}</Box>
-                            <Typography variant="h6">Very Good {city.reviews} reviews</Typography>
+                            <Typography variant="h6" color="textSecondary">Very Good {city.reviews} reviews</Typography>
                         </Stack>
                     </Stack>
-                    <Stack alignItems="self-end" flexDirection="column">
-                        <Typography color="red" variant="h4">${city.price}</Typography>
+                    <Stack alignItems="self-end" flexDirection="column" textAlign="right">
+                        <Typography color="red" variant="h4" fontWeight="bold">${city.price}</Typography>
                         <Stack flexDirection="row" gap="5px">
                             <IconButton onClick={handleToggleFavorite} aria-label="toggle favorite">
                                 {isFavorite ? <FavoriteIcon style={{ color: 'red' }} /> : <FavoriteBorderIcon />}
@@ -106,14 +105,14 @@ const CityDetail = () => {
                     <img src={city.img} className="city-images" alt={city.title} />
                 </Box>
                 
-                <Stack alignItems="center" flexDirection="row">
+                <Stack alignItems="center" flexDirection="row" justifyContent="center" flexWrap="wrap">
                     {city.airplanes.map((plane, index) => (
-                        <img key={index} src={plane} className="plane-image" alt={`Room ${index + 1}`} />
+                        <img key={index} src={plane} className="plane-image" alt={`Plane ${index + 1}`} />
                     ))}
                 </Stack>
                 
                 <Box marginTop="20px">
-                    <Typography variant='h4'>Information</Typography>
+                    <Typography variant='h4' fontWeight="bold" marginBottom="10px">Information</Typography>
                     <Box component="ul" sx={{ marginTop: "20px", paddingLeft: "20px" }}>
                         {city.details.map((detail, index) => (
                             <Typography component="li" variant="h6" key={index}>{detail}</Typography>

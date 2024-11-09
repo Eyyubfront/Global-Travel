@@ -38,25 +38,26 @@ const Favourites = () => {
     return (
         <>
             <Box padding="20px">
-                <Typography variant="h4">Your Favorites</Typography>
+                <Typography className='topfavname' variant="h4">Your Favorites</Typography>
                 {favorites.length === 0 ? (
                     <Typography>No favorites added yet.</Typography>
                 ) : (
-                    <Stack gap="20px" flexDirection="row" flexWrap="wrap">
+                    <Stack gap="20px" flexDirection="row" alignItems="center" flexWrap="wrap">
                         {favorites.map(item => (
                             <Box key={item.id} className="favorite-item">
                                 <Stack flexDirection="column">
                                   <Box>
-                                  <img style={{ width: "100%", height: '250px' }} src={item.image || item.img} alt={item.name || item.title} />
+                                  <img style={{ height: '159px' }} src={item.image || item.img} alt={item.name || item.title} />
                                   </Box>
-                                    <Stack gap="2px" flexDirection="column" style={{ flexGrow: 1,marginLeft:"11px" }}>
-                                        <Stack alignItems="center" flexDirection="row">
+                                    <Stack gap="2px" flexDirection="column" style={{ flexGrow: 1,alignItems:"center"}}>
                                             <Typography variant="h6">{item.name || item.title}</Typography>
+                                        <Stack justifyContent="center" alignItems="center" flexDirection="row">
                                             <Stack gap="10px" alignItems="center" flexDirection="row">
+                                               
+                                                <Typography className='pricesfavorite' color="red">${item.price}</Typography>
                                                 <Box>
                                                     -
                                                 </Box>
-                                                <Typography className='pricesfavorite' color="red">${item.price}</Typography>
                                                 <Typography width="100px">({item.days} days)</Typography>
                                             </Stack>
                                         </Stack>

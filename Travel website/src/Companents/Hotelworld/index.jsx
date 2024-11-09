@@ -10,6 +10,7 @@ import hotels from '../../data/hotel';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, removeFavorite } from '../../features/favoritesSlice';
 import './Hotelworld.css'; // Import the CSS file
+import { addOrder } from '../../features/ordersSlice'; // ordersSlice'tan addOrder aksiyonunu import ediyoruz
 
 const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
     const dispatch = useDispatch();
@@ -31,12 +32,30 @@ const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
             dispatch(removeFavorite(hotel.id));
             setMessage('Favorilerden çıkarıldı');
         } else {
+          
             dispatch(addFavorite({ ...hotel, type: 'hotel' }));
             setMessage('Favorilere eklendi');
         }
         setFadeOut(false);
         setTimeout(() => setFadeOut(true), 3000);
     };
+    const handleAddToOrders = (hotel) => {
+        console.log("Image URL: ", hotel.image);  
+        const order = {
+            id: hotel.id,
+            title: hotel.name,
+            price: parseFloat(hotel.price),  
+            country: hotel.country,
+            city: hotel.city || '', 
+            img: hotel.image,        
+            quantity: 1,             
+        };
+      
+        console.log("Order to add:", order); // Debugging line
+        dispatch(addOrder(order)); // Burada `dispatch` ile `addOrder` aksiyonunu çağırıyoruz
+    };
+    
+    
 
     return (
         <Box className="hotelworld-container">
@@ -55,6 +74,7 @@ const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
                         <Box key={hotel.id} className="hotel-card">
                             <Stack className="hotel-details" gap="5%" flexDirection="row">
                                 <img className="hotel-images" src={hotel.image} alt={hotel.name} />
+                           
                                 <Stack className="hotel-info" gap="2px" flexDirection="column">
                                     <Stack flexDirection="row" alignItems="center" gap="15px">
                                         <Typography variant="h5">{hotel.name}</Typography>
