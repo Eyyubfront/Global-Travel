@@ -3,8 +3,6 @@ import LandingPages from "../Pages/Landingpages";
 import Flightlist from "../Pages/Flightlist";
 import Loginspage from "../Pages/Login";
 import Signup from "../Pages/Signup";
-import Pasword from "../Pages/Pasword";
-import PaswordNew from "../Pages/PaswordNew";
 import Hotellist from "../Pages/Hotellist";
 import Hotellistabout from "../Pages/Hotellistabout";
 import Myacaount from "../Pages/Myacount";
@@ -28,8 +26,7 @@ const Routing = ({ user, setUser }) => {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/logins" element={<Loginspage setUser={setUser} />} />
                 <Route path="/signs" element={<Signup setUser={setUser} />} />
-                <Route path="/pasword" element={<Pasword />} />
-                <Route path="/paswordnews" element={<PaswordNew />} />
+              
                 <Route path="/hotellist" element={<Hotellist />} />
                 <Route path="/hotellistabout/:id" element={<Hotellistabout />} />
                 <Route path="/myacount" element={<Myacaount user={user} setUser={setUser}  />} />

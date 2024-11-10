@@ -47,7 +47,7 @@ const Favourites = () => {
                             <Box key={item.id} className="favorite-item">
                                 <Stack flexDirection="column">
                                   <Box>
-                                  <img style={{ height: '159px' }} src={item.image || item.img} alt={item.name || item.title} />
+                                  <img style={{ width:"316px" }} src={item.image || item.img} alt={item.name || item.title} />
                                   </Box>
                                     <Stack gap="2px" flexDirection="column" style={{ flexGrow: 1,alignItems:"center"}}>
                                             <Typography variant="h6">{item.name || item.title}</Typography>

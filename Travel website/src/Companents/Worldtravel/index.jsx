@@ -47,43 +47,39 @@ const Worldtravel = ({ priceFilter, priceValue, daysValue }) => {
                         <Typography variant="body2" color="green">{message}</Typography>
                     </Stack>
                 </Box>
-        
             )}
-              <Typography className='topflight_name' variant="h4">Available Flight</Typography>
-            <Stack gap="20px" flexDirection="row" 
-    marginLeft= "24px"
- flexWrap="wrap">
+            <Typography className='topflight_name' variant="h4">Available Flight</Typography>
+            <Stack gap="20px" flexDirection="row" marginLeft="24px" flexWrap="wrap">
                 {filteredCities.map(city => (
                     <Box key={city.id} className="city-card">
-                        
-                        <Stack gap="2%" flexDirection="row">
-                            <img className="city-image" src={city.img} alt={city.title} />
-                            <Stack gap="2px" flexDirection="column">
-                                <Typography variant="h6">{city.title}</Typography>
-                                <Stack alignItems="center" flexDirection="row" gap="20%">
-                                    <Stack flexDirection="row" alignItems="center" gap="10px">
-                                        <Typography className="rating">{city.rating}</Typography>
-                                        <Typography width="200px">Very Good {city.reviews} reviews</Typography>
-                                    </Stack>
-                                    <Stack gap="10px" flexDirection="column">
-                                        <Typography color="red">${city.price}</Typography>
-                                        <Typography width="100px">{city.days} days</Typography>
-                                    </Stack>
+                        <Stack direction="column" spacing={2} className="card-inner">
+                            <Box className="city-image-container">
+                                <img className="city-image" src={city.img} alt={city.title} />
+                            </Box>
+                            <Typography variant="h6" className="city-title">{city.title}</Typography>
+                            <Stack direction="row" justifyContent="space-between" alignItems="center">
+                                <Stack direction="row" spacing={1} alignItems="center">
+                                    <Typography className="rating">{city.rating}</Typography>
+                                    <Typography variant="body2" color="textSecondary">
+                                        {city.reviews} reviews
+                                    </Typography>
                                 </Stack>
-                                <Stack flexDirection="row" gap="20px">
-                                    <IconButton onClick={() => handleAddToFavorites(city)}>
-                                        {favorites.some(fav => fav.id === city.id) ? (
-                                            <FavoriteIcon style={{ color: 'red' }} />
-                                        ) : (
-                                            <FavoriteBorderIcon />
-                                        )}
-                                    </IconButton>
-                                    <Link to={`/city/${city.id}`} style={{ textDecoration: "none" }}>
-                                        <Button className="view-deals-button">
-                                            View Deals
-                                        </Button>
-                                    </Link>
+                                <Stack direction="column" alignItems="flex-end">
+                                    <Typography variant="h6" color="error">${city.price}</Typography>
+                                    <Typography variant="body2">{city.days} days</Typography>
                                 </Stack>
+                            </Stack>
+                            <Stack direction="row" spacing={2} justifyContent="space-between" alignItems="center">
+                                <IconButton onClick={() => handleAddToFavorites(city)}>
+                                    {favorites.some(fav => fav.id === city.id) ? (
+                                        <FavoriteIcon style={{ color: 'red' }} />
+                                    ) : (
+                                        <FavoriteBorderIcon />
+                                    )}
+                                </IconButton>
+                                <Link to={`/city/${city.id}`} style={{ textDecoration: 'none' }}>
+                                    <Button className="view-deals-button">View Deals</Button>
+                                </Link>
                             </Stack>
                         </Stack>
                     </Box>

@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 import hotels from '../../data/hotel';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, removeFavorite } from '../../features/favoritesSlice';
-import './Hotelworld.css'; // Import the CSS file
-import { addOrder } from '../../features/ordersSlice'; // ordersSlice'tan addOrder aksiyonunu import ediyoruz
+import './Hotelworld.css'; 
+import { addOrder } from '../../features/ordersSlice';
 
 const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
     const dispatch = useDispatch();
@@ -18,6 +18,7 @@ const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
     const [message, setMessage] = useState(null);
     const [fadeOut, setFadeOut] = useState(false);
 
+    // Filtreleme işlemleri
     const filteredHotels = hotels.filter(hotel => {
         const matchesPrice = priceFilter === 'all' ||
             (priceFilter === 'ucuz' && hotel.price <= 250) ||
@@ -27,35 +28,32 @@ const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
         return matchesPrice && matchesDays && matchesStars;
     });
 
+    // Favorilere ekle/çıkarma işlemi
     const handleAddToFavorites = (hotel) => {
         if (favorites.some(fav => fav.id === hotel.id)) {
             dispatch(removeFavorite(hotel.id));
             setMessage('Favorilerden çıkarıldı');
         } else {
-          
             dispatch(addFavorite({ ...hotel, type: 'hotel' }));
             setMessage('Favorilere eklendi');
         }
         setFadeOut(false);
         setTimeout(() => setFadeOut(true), 3000);
     };
+
+    // Sipariş ekleme işlemi
     const handleAddToOrders = (hotel) => {
-        console.log("Image URL: ", hotel.image);  
         const order = {
             id: hotel.id,
             title: hotel.name,
-            price: parseFloat(hotel.price),  
+            price: parseFloat(hotel.price),
             country: hotel.country,
-            city: hotel.city || '', 
-            img: hotel.image,        
-            quantity: 1,             
+            city: hotel.city || '',
+            img: hotel.image,
+            quantity: 1,
         };
-      
-        console.log("Order to add:", order); // Debugging line
-        dispatch(addOrder(order)); // Burada `dispatch` ile `addOrder` aksiyonunu çağırıyoruz
+        dispatch(addOrder(order)); // Sipariş ekleme
     };
-    
-    
 
     return (
         <Box className="hotelworld-container">
@@ -67,56 +65,54 @@ const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
                     </Stack>
                 </Box>
             )}
-            <Box sx={{ marginLeft: "23px" }}>
-                <Typography className='hoteltop_name' variant="h4">Available Hotels</Typography>
-                <Stack gap="20px" flexDirection="row" flexWrap="wrap">
-                    {filteredHotels.map((hotel) => (
-                        <Box key={hotel.id} className="hotel-card">
-                            <Stack className="hotel-details" gap="5%" flexDirection="row">
-                                <img className="hotel-images" src={hotel.image} alt={hotel.name} />
-                           
-                                <Stack className="hotel-info" gap="2px" flexDirection="column">
-                                    <Stack flexDirection="row" alignItems="center" gap="15px">
-                                        <Typography variant="h5">{hotel.name}</Typography>
-                                        <Stack alignItems="center" flexDirection="column" gap="5px">
-                                            <Typography variant="h5" color="red">${hotel.price}</Typography>
-                                            <Typography variant="body1" align="center">for {hotel.days} days</Typography>
-                                        </Stack>
-                                    </Stack>
-                                    <Stack marginTop='10px' alignItems="center" flexDirection="row" gap="10px">
-                                        <AddLocationAltIcon />
-                                        <Typography>{hotel.location}</Typography>
-                                    </Stack>
-                                    <Stack marginTop="20px" alignItems="center" flexDirection="row" gap="10px">
-                                        <Stack alignItems="center" flexDirection="row" gap="10px" style={{ color: "orange" }}>
-                                            {[...Array(hotel.stars)].map((_, starIndex) => (
+            <Typography className='hoteltop_name' variant="h4">Available Hotels</Typography>
+            <Stack gap="20px" flexDirection="row" marginLeft="24px" flexWrap="wrap">
+                {filteredHotels.map(hotel => (
+                    <Box key={hotel.id} className="hotel-card">
+                        <Stack direction="column" spacing={2} className="card-inner">
+                            <Box className="hotel-image-container">
+                                <img className="hotel-image" src={hotel.image} alt={hotel.name} />
+                            </Box>
+                            <Typography variant="h6" className="hotel-title">{hotel.name}</Typography>
+                            <Stack direction="row" justifyContent="space-between" alignItems="center">
+                                <Stack direction="row" spacing={1} alignItems="center">
+                                  
+                                  
+                                    <Typography variant="body2">{hotel.location}</Typography>
+                                </Stack>
+                               
+                                <Stack direction="column" alignItems="flex-end">
+                                    <Typography variant="h6" color="error">${hotel.price}</Typography>
+                                    <Typography variant="body2" color="textSecondary">
+                                        {hotel.days} days
+                                    </Typography>
+                                </Stack>
+                            </Stack>
+                            <Stack marginTop="20px" alignItems="center" flexDirection="row" gap="10px">
+                                         <Stack alignItems="center" flexWrap="wrap" flexDirection="row" gap="10px" style={{ color: "orange" }}>
+                                       {[...Array(hotel.stars)].map((_, starIndex) => (
                                                 <StarBorderIcon key={starIndex} />
                                             ))}
                                         </Stack>
                                         <Typography>{hotel.stars} Star Hotel</Typography>
                                     </Stack>
-                                    <Stack marginTop="5px" flexDirection="row" gap="20px">
-                                        <IconButton onClick={() => handleAddToFavorites(hotel)} aria-label="toggle favorite">
-                                            {favorites.some(fav => fav.id === hotel.id) ? (
-                                                <FavoriteIcon style={{ color: 'red' }} />
-                                            ) : (
-                                                <FavoriteBorderIcon />
-                                            )}
-                                        </IconButton>
-                                        <Link style={{ textDecoration: "none" }} to={`/hotellistabout/${hotel.id}`}>
-                                            <Button className="view-deals-button">
-                                                View Deals
-                                            </Button>
-                                        </Link>
-                                    </Stack>
-                                </Stack>
+                            <Stack direction="row" spacing={2} justifyContent="space-between" alignItems="center">
+                                <IconButton onClick={() => handleAddToFavorites(hotel)}>
+                                    {favorites.some(fav => fav.id === hotel.id) ? (
+                                        <FavoriteIcon style={{ color: 'red' }} />
+                                    ) : (
+                                        <FavoriteBorderIcon />
+                                    )}
+                                </IconButton>
+                                <Link to={`/hotellistabout/${hotel.id}`} style={{ textDecoration: 'none' }}>
+                                    <Button className="view-deals-button">View Deals</Button>
+                                </Link>
                             </Stack>
-                        </Box>
-                    ))}
-                </Stack>
-            </Box>
+                        </Stack>
+                    </Box>
+                ))}
+            </Stack>
         </Box>
     );
 }
-
 export default Hotelworld;

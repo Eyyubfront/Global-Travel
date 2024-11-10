@@ -1,10 +1,48 @@
+/* Filter Container */
 .filter-container {
-    background-color: white;
-    margin-left: 10px;
-    padding: 15px;
-    margin-top: 20px;
+    background-color: #f9f9f9;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.filter-container .MuiTextField-root {
+/* Filter Fields */
+.filter-field {
     width: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* TextField Styles */
+.MuiTextField-root {
+    border-radius: 8px;
+}
+
+/* Stack between filter fields */
+.filter-container .MuiStack-root {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+
+
+
+/* Making the filter container responsive */
+@media (max-width: 768px) {
+    .filter-container {
+        padding: 15px;
+    }
+
+    .filter-container .MuiStack-root {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filter-field {
+        width: 100%;
+    }
 }

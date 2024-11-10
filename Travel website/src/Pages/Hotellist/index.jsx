@@ -16,26 +16,26 @@ const Hotellist = () => {
 
   return (
     <>
-      <Box className="filter-container" sx={{ backgroundColor: 'white', marginLeft: "10px", padding: "15px", marginTop: "20px" }}>
-        <Stack flexDirection="row" gap="10px">
+      <Box className="filter-container">
+        <Stack flexDirection="row" gap="20px" justifyContent="space-between" alignItems="center">
           <TextField
             select
-            label="Amount"
+            label="Price Range"
             value={priceFilter}
             onChange={(e) => setPriceFilter(e.target.value)}
-            sx={{ width: '200px' }}
+            className="filter-field"
           >
             <MenuItem value="all">All</MenuItem>
-            <MenuItem value="ucuz">Cheap </MenuItem>
-            <MenuItem value="bahali">Expensive </MenuItem>
+            <MenuItem value="ucuz">Cheap</MenuItem>
+            <MenuItem value="bahali">Expensive</MenuItem>
           </TextField>
 
           <TextField
             select
-            label="Number of days"
+            label="Number of Days"
             value={daysValue}
             onChange={(e) => setDaysValue(e.target.value)}
-            sx={{ width: '200px' }}
+            className="filter-field"
           >
             <MenuItem value="">All</MenuItem>
             {[1, 2, 3, 4, 5, 6, 7].map(day => (
@@ -45,14 +45,14 @@ const Hotellist = () => {
 
           <TextField
             select
-            label="Star Count"
+            label="Star Rating"
             value={starsValue}
             onChange={(e) => setStarsValue(e.target.value)}
-            sx={{ width: '200px' }}
+            className="filter-field"
           >
             <MenuItem value="">All</MenuItem>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(star => (
-              <MenuItem key={star} value={star}>{star}</MenuItem>
+            {[1, 2, 3, 4, 5].map(star => (
+              <MenuItem key={star} value={star}>{star} Star</MenuItem>
             ))}
           </TextField>
         </Stack>

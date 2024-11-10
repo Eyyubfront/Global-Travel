@@ -11,6 +11,7 @@ const Loginspage = ({ setUser }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
+    const [error, setError] = useState(""); // Hata mesajı için state
     const navigate = useNavigate();
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -19,17 +20,23 @@ const Loginspage = ({ setUser }) => {
     };
 
     const handleLogin = () => {
-        const { email: registeredEmail, password: registeredPassword, name: registeredName } = location.state || {};
-
+        const { email: registeredEmail, password: registeredPassword, name: registeredName, emailFirstLetter } = location.state || {};
+    
+        if (!email || !password) {
+            setError("Please fill in both email and password");
+            return;
+        }
+    
         if (email === registeredEmail && password === registeredPassword) {
-            localStorage.setItem("user", JSON.stringify({ email, name: registeredName || 'Guest' }));
-            setUser({ email, name: registeredName || 'Guest' });
+            // Kullanıcıyı localStorage'a kaydediyoruz
+            localStorage.setItem("user", JSON.stringify({ email, name: registeredName || 'Guest', emailFirstLetter }));
+            setUser({ email, name: registeredName || 'Guest', emailFirstLetter }); // Kullanıcıyı state'e kaydediyoruz
             navigate('/');
         } else {
-            alert("Email veya şifre yanlış!");
+            setError("Email or password is incorrect!");
         }
     };
-
+    
     return (
         <Box className="login-container">
             <Box className="login-image">
@@ -67,13 +74,10 @@ const Loginspage = ({ setUser }) => {
                         label="Password"
                     />
                 </FormControl>
-               
-                    <Stack direction="row" alignItems="center">
-                        <Checkbox />
-                        <Typography>Remember me</Typography>
-                    </Stack>
-                   
-               
+                
+                {/* Hata mesajını burada gösteriyoruz */}
+                {error && <Typography color="error" sx={{ marginTop: "10px" }}>{error}</Typography>}
+
                 <Button onClick={handleLogin} className="login-button">Login</Button>
                 <Stack direction="row" gap="8px" alignItems="center" justifyContent="center" className="signup-link">
                     <Typography>Don’t have an account?</Typography>

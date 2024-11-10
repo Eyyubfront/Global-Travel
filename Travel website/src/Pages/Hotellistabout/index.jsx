@@ -64,7 +64,7 @@ const Hotellistabout = () => {
     return (
         <>
             <Box sx={{ padding: "30px 10px",background:"#f7f7f7",boxShadow:"0 4px 12px rgb(0 0 0 / 10%)" }}>
-                {/* Favorilere eklenme mesajı */}
+        
                 {message && (
                     <Box className={`notification ${fadeOut ? 'fade-out' : ''}`}>
                         <Stack flexDirection="row" alignItems="center">
@@ -126,7 +126,7 @@ const Hotellistabout = () => {
                 </Stack>
 
                 <Box sx={{ marginBottom: "30px" }}>
-                    <img className="hotel-image" src={selectedHotel.image} alt={selectedHotel.name} />
+                    <img className="hotel-images" src={selectedHotel.image} alt={selectedHotel.name} />
                 </Box>
 
                 <Stack flexDirection="row" flexWrap="wrap" justifyContent="center" sx={{ marginTop: "30px" }}>

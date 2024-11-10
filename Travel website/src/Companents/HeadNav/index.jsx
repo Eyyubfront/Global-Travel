@@ -8,39 +8,37 @@ import { Link, useNavigate } from 'react-router-dom';
 import BurgerMenu from "../../Companents/Burgermenu";
 import { MdAddShoppingCart } from "react-icons/md";
 const HeadNav = ({ user, setUser }) => {
-    const [userInitial, setUserInitial] = useState(user ? user.email.charAt(0).toUpperCase() : '?');
-
-    const [openLogoutDialog, setOpenLogoutDialog] = useState(false); // Modal'ın açık mı olduğunu kontrol etmek için state
+    const [userInitials, setUserInitials] = useState('');
+    const [openLogoutDialog, setOpenLogoutDialog] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
-        const savedUser = localStorage.getItem("user");
-        if (savedUser) {
-            const parsedUser = JSON.parse(savedUser);
-            setUser(parsedUser);
-            setUserInitial(parsedUser.email.charAt(0).toUpperCase());
+        if (user) {
+            // Eğer kullanıcı varsa, ismin baş harfini veya e-posta ilk harfini alıyoruz
+            const initials = user.nameInitial || user.emailFirstLetter || '?';
+            setUserInitials(initials); // Baş harfini güncelliyoruz
         }
-    }, []);
-    
+    }, [user]);  // Burada 'user' değiştiğinde yeniden çalışacak
+
     const handleLogout = () => {
         localStorage.removeItem("user"); // Kullanıcıyı çıkış yaparken localStorage'dan sil
         setUser(null); // Kullanıcıyı sıfırlıyoruz
         setOpenLogoutDialog(false); // Modal'ı kapatıyoruz
+        navigate("/");  // Anasayfaya yönlendiriyoruz
     };
-    
 
     const handleProfileClick = () => {
         if (user) {
-            navigate("/myacount");
+            navigate("/myacount");  // Profil sayfasına yönlendiriyoruz
         }
     };
 
     const handleOpenLogoutDialog = () => {
-        setOpenLogoutDialog(true); // Modal'ı aç
+        setOpenLogoutDialog(true);
     };
 
     const handleCloseLogoutDialog = () => {
-        setOpenLogoutDialog(false); // Modal'ı kapat
+        setOpenLogoutDialog(false);
     };
 
     return (
@@ -65,15 +63,14 @@ const HeadNav = ({ user, setUser }) => {
 
             <Link to="/" style={{ cursor: "pointer" }}>
                 <Box>
-                    <img src={globlack} alt="" />
+                    <img src={globlack} alt="Logo" />
                 </Box>
             </Link>
 
             <Stack className="iconsonesd" flexDirection="row" alignItems="center" gap="10px">
                 <Link to="/orders" style={{ cursor: "pointer", textDecoration: "none" }}>
                     <Box color="black">
-                
-                        <MdAddShoppingCart style={{fontSize:"24px"}} />
+                        <MdAddShoppingCart style={{ fontSize: "24px" }} />
                     </Box>
                 </Link>
 
@@ -81,7 +78,6 @@ const HeadNav = ({ user, setUser }) => {
                 <Link to="/favourites" style={{ cursor: "pointer", textDecoration: "none" }}>
                     <Stack color="black" flexDirection="row" alignItems="center" gap="10px">
                         <FavoriteBorderIcon />
-                        {/* <Typography>Favourites</Typography> */}
                     </Stack>
                 </Link>
 
@@ -89,12 +85,12 @@ const HeadNav = ({ user, setUser }) => {
 
                 {user ? (
                     <>
-                        <Typography 
-                            variant="h6" 
-                            sx={{ marginRight: 2, cursor: 'pointer' }} 
+                        <Typography
+                            variant="h6"
+                            sx={{ marginRight: 2, cursor: 'pointer' }}
                             onClick={handleProfileClick}
                         >
-                            {userInitial}
+                            {userInitials} {/* Baş harfini göster */}
                         </Typography>
                         <Button sx={{ color: "black", cursor: "pointer" }} onClick={handleOpenLogoutDialog}>Logout</Button>
                     </>
@@ -135,6 +131,9 @@ const HeadNav = ({ user, setUser }) => {
             </Dialog>
         </Stack>
     );
-}
+};
 
 export default HeadNav;
+
+
+

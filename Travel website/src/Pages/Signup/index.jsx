@@ -11,6 +11,7 @@ const Signup = ({ setUser }) => {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
+    const [error, setError] = useState(""); // Hata mesajı için state
     const navigate = useNavigate();
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -19,10 +20,24 @@ const Signup = ({ setUser }) => {
     };
 
     const handleSignup = () => {
-        console.log("Kayıt bilgileri:", { email, password, name });
-        navigate('/logins', { state: { email, password, name } });
+        if (!email || !password || !name) {
+            setError("Please fill in all fields");
+            return; // Formun ilerlemesini engeller
+        }
+    
+        // Adın ve e-posta adresinin ilk harflerini alıyoruz
+        const nameInitial = name.charAt(0).toUpperCase(); // Adın ilk harfi
+        const emailFirstLetter = email.charAt(0).toUpperCase(); // E-posta adresinin ilk harfi
+        const userData = { email, name, password, nameInitial, emailFirstLetter }; // Kullanıcı verisini oluşturuyoruz
+    
+        // Kullanıcı verilerini localStorage'a kaydediyoruz
+        localStorage.setItem("user", JSON.stringify(userData)); // User'ı kaydediyoruz
+    
+        // Kullanıcıyı login sayfasına yönlendiriyoruz
+        navigate('/logins', { state: { email, password, name, nameInitial, emailFirstLetter } });
     };
-
+    
+    
     return (
         <Box className="signup-container">
             <Box className="signup-image">
@@ -73,6 +88,10 @@ const Signup = ({ setUser }) => {
                     <Checkbox />
                     <Typography>I agree to all the Terms and Privacy Policies</Typography>
                 </Stack>
+                
+                {/* Hata mesajını burada gösteriyoruz */}
+                {error && <Typography color="error" sx={{ marginTop: "10px" }}>{error}</Typography>}
+
                 <Button
                     onClick={handleSignup}
                     className="create-button"
