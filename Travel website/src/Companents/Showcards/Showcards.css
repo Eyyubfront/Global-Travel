@@ -45,3 +45,16 @@
 .card-button:hover {
     background-color: #7BC5A1; /* Darker shade on hover */
 }
+
+.sendbtn{
+    color: white !important;
+}
+.seetext{
+ 
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    font-weight: 700 !important;
+}

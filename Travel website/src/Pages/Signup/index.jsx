@@ -18,23 +18,24 @@ const Signup = ({ setUser }) => {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
-
     const handleSignup = () => {
         if (!email || !password || !name) {
             setError("Please fill in all fields");
-            return; // Formun ilerlemesini engeller
+            return;
         }
     
-        // Adın ve e-posta adresinin ilk harflerini alıyoruz
         const nameInitial = name.charAt(0).toUpperCase(); // Adın ilk harfi
         const emailFirstLetter = email.charAt(0).toUpperCase(); // E-posta adresinin ilk harfi
-        const userData = { email, name, password, nameInitial, emailFirstLetter }; // Kullanıcı verisini oluşturuyoruz
+        const userData = { email, name, password, nameInitial, emailFirstLetter };
     
-        // Kullanıcı verilerini localStorage'a kaydediyoruz
-        localStorage.setItem("user", JSON.stringify(userData)); // User'ı kaydediyoruz
+        // Kullanıcıyı localStorage'a kaydet
+        localStorage.setItem('user', JSON.stringify(userData));
     
-        // Kullanıcıyı login sayfasına yönlendiriyoruz
-        navigate('/logins', { state: { email, password, name, nameInitial, emailFirstLetter } });
+        // State'i güncelle
+        setUser(userData); 
+    
+        // Kullanıcıyı login sayfasına yönlendir
+        navigate('/logins');
     };
     
     

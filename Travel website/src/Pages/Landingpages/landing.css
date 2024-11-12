@@ -51,10 +51,9 @@
   }
   
   .show-flights-button {
-    width: 200px;
     height: 50px;
     background-color: #8DD3BB !important;
-
+color: black;
   }
   
   .landing-title {

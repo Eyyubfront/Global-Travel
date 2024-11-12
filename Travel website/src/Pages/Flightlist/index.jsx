@@ -21,7 +21,7 @@ const Flightlist = () => {
   
 
       <Box className="filter-container" >
-        <Stack flexDirection="row" gap="10px">
+        <Stack className='textfiledflight' flexDirection="row" gap="10px">
           <TextField
             select
             className='valutextfiled'

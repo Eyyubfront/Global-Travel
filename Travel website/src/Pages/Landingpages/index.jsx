@@ -33,63 +33,103 @@ const LandingPages = ({ user, setUser }) => {
             <Typography className="landing-subtitle">Special offers to suit your plan</Typography>
           </Stack>
 
-          <Box className="landing-form" >
-            <Stack className="boxicons" flexDirection="row" alignItems="center" gap="10px">
-              <Link style={{ color: "black", textDecoration: "none" }} to="/flightlist">
-                <Stack gap="10px" alignItems="center" flexDirection="column">
-                  <Stack className="icon-text" flexDirection="row" alignItems="center" gap="10px">
-                    <FlightIcon />
-                    <Typography>Find Flight</Typography>
-                  </Stack>
-                </Stack>
-              </Link>
+        <Box className="landing-form" sx={{ padding: "20px", backgroundColor: "#f5f5f5", borderRadius: "8px" }}>
+  <Stack className="boxicons" flexDirection="row" alignItems="center" gap="20px" justifyContent="center">
+    {/* Find Flight Link */}
+    <Link style={{ color: "#333", textDecoration: "none" }} to="/flightlist">
+      <Stack gap="10px" alignItems="center" flexDirection="column">
+        <Stack className="icon-text" flexDirection="row" alignItems="center" gap="8px">
+          <FlightIcon sx={{ color: "#1a73e8", fontSize: "30px" }} />
+          <Typography variant="h6" sx={{ fontWeight: "bold", color: "#333" }}>Find Flight</Typography>
+        </Stack>
+      </Stack>
+    </Link>
 
-              <Box className="divider" />
+    <Box className="divider" sx={{ height: "50px", width: "1px", backgroundColor: "#ccc" }} />
 
-              <Link style={{ color: "black", textDecoration: "none" }} to="/hotellist">
-                <Stack className="icon-text" flexDirection="row" alignItems="center" gap="10px">
-                  <BedIcon />
-                  <Typography>Find Stays</Typography>
-                </Stack>
-              </Link>
-            </Stack>
+    {/* Find Stay Link */}
+    <Link style={{ color: "#333", textDecoration: "none" }} to="/hotellist">
+      <Stack className="icon-text" flexDirection="row" alignItems="center" gap="8px">
+        <BedIcon sx={{ color: "#1a73e8", fontSize: "30px" }} />
+        <Typography variant="h6" sx={{ fontWeight: "bold", color: "#333" }}>Find Stays</Typography>
+      </Stack>
+    </Link>
+  </Stack>
 
-            <Box className="text-field-container">
-              <Stack alignItems="center" flexDirection="row" gap="20px">
-                <TextField
-                  className="txtsdpbox"
-                  id="filled-select-currency"
-                  select
-                  label="Category Flight"
-                  defaultValue={curiens[0].value}
-                  variant="filled"
-                >
-                  {curiens.map((option) => (
-                    <MenuItem key={option.id} value={option.value}>
-                      {option.md}
-                    </MenuItem>
-                  ))}
-                </TextField>
-                <DatePicker
-                  label="Select Date"
-                  value={selectedDate}
-                  onChange={(newValue) => setSelectedDate(newValue)}
-                  renderInput={(params) => <TextField {...params} variant="filled" />}
-                />
-              </Stack>
-            </Box>
+  <Box className="text-field-container" sx={{ marginTop: "30px" }}>
+    <Stack alignItems="center" flexDirection="row" gap="30px">
+      {/* Category Select */}
+      <TextField
+        className="txtsdpbox"
+        id="filled-select-category"
+        select
+        label="Category"
+        defaultValue={curiens[0].value}
+        variant="filled"
+        sx={{
+          backgroundColor: "#fff",
+          borderRadius: "5px",
+          width: "250px",
+          "& .MuiFilledInput-root": {
+            backgroundColor: "#e8f0fe",
+          },
+          "& .MuiInputLabel-root": { color: "#555" },
+          "& .MuiSelect-root": { color: "#333" },
+        }}
+      >
+        {curiens.map((option) => (
+          <MenuItem key={option.id} value={option.value}>
+            {option.md}
+          </MenuItem>
+        ))}
+      </TextField>
 
-            <Stack className="adpromo" flexDirection="row" alignItems="center" gap="10px">
-              <Link style={{ color: "black", textDecoration: "none" }} to='/flightlist'>
-                <Button className="show-flights-button">
-                  <Stack color="black" flexDirection="row" gap="10px">
-                    <SendIcon />
-                    <Typography>Show Flights</Typography>
-                  </Stack>
-                </Button>
-              </Link>
-            </Stack>
-          </Box>
+      {/* Date Picker */}
+      <DatePicker
+        label="Select Date"
+        value={selectedDate}
+        onChange={(newValue) => setSelectedDate(newValue)}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            variant="filled"
+            sx={{
+              backgroundColor: "#fff",
+              borderRadius: "5px",
+              width: "250px",
+              "& .MuiFilledInput-root": {
+                backgroundColor: "#e8f0fe",
+              },
+            }}
+          />
+        )}
+      />
+    </Stack>
+  </Box>
+
+  <Stack className="adpromo" flexDirection="row" alignItems="center" gap="20px" justifyContent="center" sx={{ marginTop: "30px" }}>
+    <Link style={{ color: "black", textDecoration: "none" }} to="/flightlist">
+      <Button
+        className="show-flights-button"
+        sx={{
+          backgroundColor: "#1a73e8",
+          color: "white",
+          borderRadius: "5px",
+          padding: "12px 25px",
+          "&:hover": {
+            backgroundColor: "#165a8d",
+          },
+        }}
+      >
+        <Stack flexDirection="row" gap="10px" alignItems="center">
+          <SendIcon sx={{ color: "white" }} />
+          <Typography sx={{ fontWeight: "bold" }}>Show Flights</Typography>
+        </Stack>
+      </Button>
+    </Link>
+  </Stack>
+</Box>
+
      
         </Box>
       </Box>

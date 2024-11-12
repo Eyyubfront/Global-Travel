@@ -19,13 +19,13 @@ const HeadNav = ({ user, setUser }) => {
             setUserInitials(initials); // Baş harfini güncelliyoruz
         }
     }, [user]);  // Burada 'user' değiştiğinde yeniden çalışacak
-
     const handleLogout = () => {
         localStorage.removeItem("user"); // Kullanıcıyı çıkış yaparken localStorage'dan sil
-        setUser(null); // Kullanıcıyı sıfırlıyoruz
+        setUser(null); // Kullanıcıyı state'ten sil
         setOpenLogoutDialog(false); // Modal'ı kapatıyoruz
         navigate("/");  // Anasayfaya yönlendiriyoruz
     };
+    
 
     const handleProfileClick = () => {
         if (user) {

@@ -19,8 +19,8 @@ const Showcards = () => {
             <Link style={{ textDecoration: "none" }} to="/flightlist">
               <Button className="card-button" >
                 <Stack color="black" flexDirection="row" gap="10px">
-                  <SendIcon />
-                  <Typography>Show Flights</Typography>
+                  <SendIcon className='sendbtn' />
+                  <Typography className='seetext'>Show Flights</Typography>
                 </Stack>
               </Button>
             </Link>
@@ -36,8 +36,8 @@ const Showcards = () => {
             <Link style={{ textDecoration: "none" }} to="/hotellist">
               <Button className="card-button" >
                 <Stack color="black" flexDirection="row" gap="10px">
-                  <SendIcon />
-                  <Typography>Show Hotels</Typography>
+                  <SendIcon className='sendbtn' />
+                  <Typography className='seetext'>Show Hotels</Typography>
                 </Stack>
               </Button>
             </Link>
