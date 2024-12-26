@@ -5,15 +5,16 @@
     box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.09);
     transform: scale(1);
     margin: 10px;
-    cursor: pointer; /* Indicate that it is clickable */
+    cursor: pointer; 
 }
 .perfecttrip-container:hover{
     transform: scale(0.9) !important;
 }
 
 .perfecttrip-image {
-    width: 110px;
-    height: 100px;
+    width: 140px;
+    height: 108px;
+    object-fit: cover;
 }
 
 .perfecttrip-title {

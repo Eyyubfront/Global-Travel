@@ -79,22 +79,22 @@ color: black;
   
   .airplane {
     position: absolute;
-    width: 380px; /* Uçak boyutu */
+    width: 380px;
     animation: fly 8s linear infinite;
-    top: 0; /* En yukarıda olmasını sağlamak için */
-    transform: translateY(0); /* Y ekseninde kaydırma yapma */
+    top: 0; 
+    transform: translateY(0); 
 }
 
 @keyframes fly {
     0% {
-        left: -100px; /* Başlangıç noktası (ekranın dışında) */
+        left: -100px; 
    
     }
     50% {
-        left:70%; /* Ekranın sağ tarafı */
+        left:70%; 
     }
     100% {
-        left: -100px; /* Tekrar başlangıç noktası */
+        left: -100px; 
     }
 }
 

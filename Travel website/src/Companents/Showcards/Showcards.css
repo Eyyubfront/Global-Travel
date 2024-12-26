@@ -25,25 +25,22 @@
 }
 
 .card-title {
-    font-family: 'TradeGothic LT Extended', sans-serif; /* Ensure font is applied */
-    color: white;
+    font-family: 'TradeGothic LT Extended', sans-serif; 
+    color: black;
+    font-family: Inter,sans-serif;
 }
 
-.card-description {
-    margin-top: 10px; /* Space between title and description */
-    width: 300px !important;
-    color: white !important;
-}
+
 
 .card-button {
-    background-color: #8DD3BB !important; /* Button background color */
-    transition: background-color 0.3s; /* Smooth button effect */
+    background-color: #8DD3BB !important; 
+    transition: background-color 0.3s; 
     width: 200px !important;
     height: 50px !important;
 }
 
 .card-button:hover {
-    background-color: #7BC5A1; /* Darker shade on hover */
+    background-color: #7BC5A1; 
 }
 
 .sendbtn{
@@ -57,4 +54,43 @@
     line-height: 1.5;
     letter-spacing: 0.00938em;
     font-weight: 700 !important;
+}
+
+@media (max-width: 600px) {
+  .showcards-container{
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
+  .card-content{
+left: 102px !important;
+  }
+  .card-description{
+    width: 250px !important;
+  }
+
+    .hotels-card{
+        width: 363px !important;
+        height: 390px !important;
+    }
+}
+@media (max-width: 991px) {
+    .showcards-container{
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 15px !important;
+    }
+    .hotels-card{
+width: 100% !important;
+height: 500px !important ;
+    }
+  }
+  
+
+  @media (min-width: 991px) and (max-width: 1440px) {
+    .showcards-container{
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 15px !important;
+      }
 }

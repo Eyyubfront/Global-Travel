@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './contact.css';  // Stil üçün əlavə edilmiş CSS
-import emailjs from 'emailjs-com';  // Email göndərmək üçün EmailJS istifadə edirik
+import './contact.css';  
+import emailjs from 'emailjs-com';  
 import Footer from '../../Companents/Footer';
-import { Link } from 'react-router-dom';  // Link bileşenini kullanıyoruz
-import { FaHome } from 'react-icons/fa';  // React Icons'dan Home ikonu ekliyoruz
+import { Link } from 'react-router-dom';  
+import { FaHome } from 'react-icons/fa';  
 import { Typography, Box } from '@mui/material';
 
 const Contact = () => {
@@ -15,7 +15,7 @@ const Contact = () => {
     message: ''
   });
 
-  // Form məlumatlarını idarə etmək
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -24,12 +24,12 @@ const Contact = () => {
     });
   };
 
-  // Formu göndərmək
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // EmailJS ilə e-poçt göndərmək
-    emailjs.sendForm('your_service_id', 'your_template_id', e.target, 'your_user_id') // Service ID, Template ID, və User ID EmailJS hesabınızdan alınmalıdır
+   
+    emailjs.sendForm('your_service_id', 'your_template_id', e.target, 'your_user_id') 
       .then((result) => {
         alert('Mesajınız göndərildi!');
       }, (error) => {
@@ -102,8 +102,7 @@ const Contact = () => {
           </div>
           <button type="submit">Send Message</button>
         </form>
-        
-        {/* Google Maps Iframe */}
+   
         <Box>
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194472.7685291565!2d49.690147089047194!3d40.394737008295685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2zQmFrw7w!5e0!3m2!1str!2saz!4v1731066999022!5m2!1str!2saz" 

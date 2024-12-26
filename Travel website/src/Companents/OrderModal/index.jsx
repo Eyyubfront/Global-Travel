@@ -1,13 +1,13 @@
 import React from 'react';
 import { Box, Typography, Button, Stack } from '@mui/material';
-import './OrderModal.css'; // Importing CSS file
+import './OrderModal.css'; 
 
 const OrderModal = ({ open, onClose, onConfirm, quantity, setQuantity }) => {
     if (!open) return null;
 
     const handleConfirm = () => {
-        onConfirm(quantity); // Send quantity
-        setQuantity(1); // Reset quantity
+        onConfirm(quantity); 
+        setQuantity(1); 
     };
 
     return (

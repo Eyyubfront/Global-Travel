@@ -3,42 +3,60 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import loginphoto from "../../assets/loginphoto.png"; // Kullanıcı fotoğrafını ekleyin
-import './signup.css'; // CSS dosyasını ekliyoruz
+import loginphoto from "../../assets/loginphoto.png"; 
+import './signup.css'; 
 
 const Signup = ({ setUser }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
-    const [error, setError] = useState(""); // Hata mesajı için state
+    const [error, setError] = useState("");
+
     const navigate = useNavigate();
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
+    const handleMouseDownPassword = (event) => event.preventDefault();
+
     const handleSignup = () => {
-        if (!email || !password || !name) {
+        if (!email.trim() || !password.trim() || !name.trim()) {
             setError("Please fill in all fields");
             return;
         }
     
-        const nameInitial = name.charAt(0).toUpperCase(); // Adın ilk harfi
-        const emailFirstLetter = email.charAt(0).toUpperCase(); // E-posta adresinin ilk harfi
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            setError("Please enter a valid email address");
+            return;
+        }
+    
+        if (password.includes(" ")) {
+            setError("Password cannot contain spaces");
+            return;
+        }
+    
+        if (password.length < 8) {
+            setError("Password must be at least 8 characters long");
+            return;
+        }
+    
+        if (!/[A-Z]/.test(password)) {
+            setError("Password must contain at least one uppercase letter");
+            return;
+        }
+    
+        const nameInitial = name.charAt(0).toUpperCase();
+        const emailFirstLetter = email.charAt(0).toUpperCase();
         const userData = { email, name, password, nameInitial, emailFirstLetter };
     
-        // Kullanıcıyı localStorage'a kaydet
         localStorage.setItem('user', JSON.stringify(userData));
+        setUser(userData);
     
-        // State'i güncelle
-        setUser(userData); 
-    
-        // Kullanıcıyı login sayfasına yönlendir
-        navigate('/logins');
+      
+        navigate('/logins', { state: userData });
     };
     
-    
+
     return (
         <Box className="signup-container">
             <Box className="signup-image">
@@ -77,7 +95,7 @@ const Signup = ({ setUser }) => {
                                         onMouseDown={handleMouseDownPassword}
                                         edge="end"
                                     >
-                                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                                        {showPassword ? <Visibility /> : <VisibilityOff />}
                                     </IconButton>
                                 </InputAdornment>
                             }
@@ -90,7 +108,6 @@ const Signup = ({ setUser }) => {
                     <Typography>I agree to all the Terms and Privacy Policies</Typography>
                 </Stack>
                 
-                {/* Hata mesajını burada gösteriyoruz */}
                 {error && <Typography color="error" sx={{ marginTop: "10px" }}>{error}</Typography>}
 
                 <Button

@@ -5,7 +5,22 @@
    padding: 0;
 }
 
+.header_container{
+    position: sticky;
+    z-index: 9999999;
+   
+    background-color: white;
+    width: 96%;
 
+}
+.nav_head {
+    border-bottom: 2px solid transparent;  
+    transition: border-color 0.3s ease;    
+}
+
+.nav_head:hover {
+    border-bottom: 2px solid black; 
+}
 
 .favrthova:hover{
     background-color: red;
@@ -42,94 +57,102 @@
  }
 
 
+.MuiPaper-root{
+    background-color: white !important;
+}
+.css-m9glnp-MuiPaper-root-MuiDialog-paper{
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+    width: 59% !important;
+    height: 73% !important;
+}
 
-  
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     .Container {
-      max-width: 540px;
+        max-width: 540px;
     }
-    .placego{
-        margin-top: 120% !important; 
+  .nav_items{
+    display: none !important;
+  }
+    .burger_menu {
+        display: block !important; 
+    }
+    .placego {
+        margin-top: 120% !important;
     }
 
-    .letsgos{
-        margin-top: 100% !important; 
+    .letsgos {
+        margin-top: 100% !important;
         text-align: center;
     }
 
-    .letsgosb{
-        margin-top: 145% !important; 
+    .letsgosb {
+        margin-top: 145% !important;
         text-align: center;
     }
-   
-    .photosloctresp{
+
+    .photosloctresp {
         margin-top: 55px !important;
     }
 
-
-    .rewsbox{
-        width: 350px ;
+    .rewsbox {
+        width: 350px;
         margin: auto;
         margin-top: 37px;
     }
-    .goingtexts{
+
+    .goingtexts {
         margin-top: 20px !important;
     }
 
-
-
-    .texttsfiledcolumn{
+    .texttsfiledcolumn {
         display: flex;
         flex-direction: column !important;
     }
 
-   
-
-  
-
-    .twoboxs{
+    .twoboxs {
         display: flex;
         flex-direction: column !important;
         margin: auto;
         align-items: center;
-        gap: 15px  !important;
+        gap: 15px !important;
     }
 
-    .seamorbtn{
+    .seamorbtn {
         margin-top: 20px;
     }
 
-    .onestextsdfiled{
+    .onestextsdfiled {
         width: 100% !important;
     }
 
-    .rewies{
+    .rewies {
         width: 100% !important;
-      text-align: center;
+        text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .txtsdpbox{
+    .txtsdpbox {
         width: 100% !important;
     }
 
-    .footerfinis{
-     
-      flex-direction: column !important;
-      gap: 10px;
+    .footerfinis {
+        flex-direction: column !important;
+        gap: 10px;
         text-align: center;
-          display: flex !important;
-          justify-content: center;
-          align-items: center;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
     }
 
-    .maketravel{
+    .maketravel {
         width: 100% !important;
     }
 
-    .foterboxone{
+    .foterboxone {
         width: 82% !important;
         height: 200% !important;
         padding: 10px !important;
@@ -138,65 +161,63 @@
         text-align: center !important;
     }
 
-    .boxsdonescolumn{
+    .boxsdonescolumn {
         display: flex;
-        flex-direction: column  !important;
+        flex-direction: column !important;
     }
 
-    .sealsbtn{
+    .sealsbtn {
         width: 100% !important;
     }
 
-    .hoteslsd{
+    .hoteslsd {
         width: 100% !important;
     }
 
-    .hotesltextsd{
-        width: 240px  !important;
+    .hotesltextsd {
+        width: 240px !important;
     }
 
-    .iconsonesd{
-        display: none  !important;
+    .iconsonesd {
+        display: none !important;
     }
 
-    .landingsmalbox{
+    .landingsmalbox {
         height: 40% !important;
         top: 38% !important;
     }
 
-
-    
-    .landingsmalboxa{
+    .landingsmalboxa {
         height: 66% !important;
-        top:54%  !important;
-    width: 80% !important;
-    padding: 10px;
+        top: 54% !important;
+        width: 80% !important;
+        padding: 10px;
     }
 
-    .landingsmalboxb{
+    .landingsmalboxb {
         height: 65% !important;
-        top:48%  !important;
-    width: 80% !important;
-    padding: 10px;
+        top: 48% !important;
+        width: 80% !important;
+        padding: 10px;
     }
-    .texttsfiledcolumna{
+
+    .texttsfiledcolumna {
         display: flex;
         flex-direction: column !important;
     }
-  
 
-  
-
-    .landingsmalboxc{
+    .landingsmalboxc {
         height: 59% !important;
         top: 11% !important;
         width: 80% !important;
         padding: 10px;
     }
-    .flylines{
+
+    .flylines {
         width: 230px !important;
     }
-    .sortbytxt{
+
+    .sortbytxt {
         display: flex;
         flex-direction: row;
         gap: 10% !important;
@@ -204,87 +225,135 @@
         text-align: center;
         justify-content: center;
     }
-    .bos{
+
+    .bos {
         width: 98% !important;
     }
-    .hotelwordboxes{
+
+    .hotelwordboxes {
         width: 96% !important;
     }
 
-    .hotelslistphotsrows{
+    .hotelslistphotsrows {
         display: flex;
         flex-direction: column !important;
         width: 100% !important;
         align-items: center;
     }
 
-    .mapsbutons{
+    .mapsbutons {
         width: 230px !important;
     }
-    .roomscards{
+
+    .roomscards {
         display: flex;
         flex-direction: column !important;
         gap: 10px !important;
-        align-items: center; 
+        align-items: center;
         text-align: center !important;
     }
-    .hotelslistcardscolmmn{
+
+    .hotelslistcardscolmmn {
         display: flex;
         flex-direction: column !important;
         width: 100% !important;
         align-items: center;
         gap: 10px !important;
     }
-    .locationphotos{
-        width: 100% !important;
-    }
-    .textcentrs{
-        text-align: center !important;
-    }
-    .bigonehotels{
+
+    .locationphotos {
         width: 100% !important;
     }
 
-    .flyemirtexts{
+    .textcentrs {
+        text-align: center !important;
+    }
+
+    .bigonehotels {
+        width: 100% !important;
+    }
+
+    .flyemirtexts {
         display: flex;
         flex-direction: column !important;
-       width: 100% !important;
+        width: 100% !important;
         align-items: center;
         text-align: center;
         justify-content: center;
         gap: 10px !important;
     }
 
-    .worldboxsone{
+    .worldboxsone {
         display: flex;
         align-items: center;
-       
         flex-direction: column !important;
     }
-    .chaeapboxs{
+
+    .chaeapboxs {
         width: 75% !important;
         margin: auto;
     }
-    .boxsoneslines{
-        width:70% !important;
+
+    .boxsoneslines {
+        width: 70% !important;
         height: 0 !important;
     }
-    
 
-    .adpromo{
+    .adpromo {
         margin-left: 10% !important;
     }
 
-    .borderlins{
+    .borderlins {
         display: none;
     }
- .faltext{
-    text-align: center !important;
- }
- .letsgosz{
-    margin-top:30% !important; 
-    text-align: center;
+
+    .faltext {
+        text-align: center !important;
+    }
+
+    .letsgosz {
+        margin-top: 30% !important;
+        text-align: center;
+    }
+
+   
+    .burger_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .burger_button {
+        background-color: #f44336;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .burger_menu_items {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
 }
+@media (min-width: 600px)and (max-width:990px ) {
+    .burger_menu {
+        display: none !important; 
+    }
+    .header_container{
+        gap: 7px !important;
+    }
+    .sign_btn{
+        width: 86px !important;
+    }
+ 
+}
+
+
+@media (min-width: 991px) and (max-width: 1440px) {
+    .burger_menu {
+        display: none !important;
+    }
 }
 
 

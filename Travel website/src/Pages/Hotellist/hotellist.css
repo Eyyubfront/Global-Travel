@@ -1,48 +1,78 @@
-/* Filter Container */
+
 .filter-container {
-    background-color: #f9f9f9;
+
     margin: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+
+    transition: all 0.3s ease;
 }
 
-/* Filter Fields */
+.filter-container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
 .filter-field {
-    width: 200px;
+    width: 220px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-/* TextField Styles */
+.filter-field:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .MuiTextField-root {
     border-radius: 8px;
 }
 
-/* Stack between filter fields */
+
 .filter-container .MuiStack-root {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
 }
 
 
-
-
-
-/* Making the filter container responsive */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .filter-container {
-        padding: 15px;
+        padding: 18px;
+        width: 100%;
     }
 
     .filter-container .MuiStack-root {
-        flex-direction: column;
+        flex-direction: column !important;
         gap: 15px;
+        width: 100% !important;
+    }
+    .filter-container .MuiTextField-root{
+        width: 90%;
     }
 
     .filter-field {
         width: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    .filter-field {
+        width: 100%;
+    }
+    .filter-container {
+        padding: 18px;
+        width: 85% !important;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1440px) {
+    .filter-field {
+        width: 100%;
+    }
+    .filter-container {
+        padding: 18px;
+        width: 55% !important;
     }
 }

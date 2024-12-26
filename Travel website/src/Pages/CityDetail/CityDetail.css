@@ -1,6 +1,6 @@
 .notification {
     position: absolute;
-    top: 20px;
+    top: 40%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #ffffff;
@@ -46,21 +46,59 @@
 }
 
 .city-images {
-    width: 100%;
-    object-fit: cover;
-    height: 450px;
-    border-radius: 12px;
+    width: 100%;  /* Makes image responsive */
+    max-width: 1920px;  /* Ensures it doesn't scale beyond 1920px */
+    height: auto;  /* Maintains aspect ratio */
+    max-height: 600px;  /* Prevents it from becoming too tall */
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+   
+    transition: transform 0.3s ease-in-out;
 }
 
-.plane-image {
-    width: 280px;
-    height: 230px;
+.planeimage {
+    width: 300px;
+    height: 320px;
     border-radius: 12px;
     margin: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
-.plane-image:hover {
+.planeimage:hover {
     transform: scale(1.05);
 }
+
+@media  (max-width: 600px) {
+    .planeimage{
+        width: 100% !important;
+        height: 523px !important;
+    }
+    .top_citydata{
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .city_boxtop{
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+  }
+
+  @media (min-width: 602px) and (max-width: 1000px) {
+    .planeimage{
+        width: 100% !important;
+        height: 623px !important;
+    }
+   
+  }
+
+  @media (min-width: 602px) and (max-width: 700px) {
+   
+    .top_citydata{
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+    .city_boxtop{
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+  }

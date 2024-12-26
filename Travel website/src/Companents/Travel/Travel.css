@@ -20,7 +20,7 @@
 .travel-many {
     display: flex;
     flex-direction: row;
-    color: white; /* Ensure the color is white for visibility */
+    color: white; 
 }
 
 .travel-button {

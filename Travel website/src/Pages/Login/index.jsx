@@ -1,9 +1,9 @@
-import { Box, Button, Stack, TextField, Typography, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Checkbox } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton } from "@mui/material";
 import React, { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import loginphoto from "../../assets/loginphoto.png"; // You can replace with your own image
+import loginphoto from "../../assets/loginphoto.png"; 
 import "./login.css";
 
 const Loginspage = ({ setUser }) => {
@@ -11,26 +11,45 @@ const Loginspage = ({ setUser }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [error, setError] = useState(""); // Hata mesajı için state
+    const [error, setError] = useState(""); 
     const navigate = useNavigate();
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
+    const handleMouseDownPassword = (event) => event.preventDefault();
 
     const handleLogin = () => {
+    
         const { email: registeredEmail, password: registeredPassword, name: registeredName, emailFirstLetter } = location.state || {};
     
-        if (!email || !password) {
+ ğ
+        if (!email.trim() || !password.trim()) {
             setError("Please fill in both email and password");
             return;
         }
     
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            setError("Please enter a valid email address");
+            return;
+        }
+    
+        if (password.includes(" ")) {
+            setError("Password cannot contain spaces");
+            return;
+        }
+    
+        if (password.length < 8) {
+            setError("Password must be at least 8 characters long");
+            return;
+        }
+    
+        
         if (email === registeredEmail && password === registeredPassword) {
-            // Kullanıcıyı localStorage'a kaydediyoruz
+        
             localStorage.setItem("user", JSON.stringify({ email, name: registeredName || 'Guest', emailFirstLetter }));
-            setUser({ email, name: registeredName || 'Guest', emailFirstLetter }); // Kullanıcıyı state'e kaydediyoruz
+            setUser({ email, name: registeredName || 'Guest', emailFirstLetter });
+    
+      
             navigate('/');
         } else {
             setError("Email or password is incorrect!");
@@ -74,8 +93,7 @@ const Loginspage = ({ setUser }) => {
                         label="Password"
                     />
                 </FormControl>
-                
-                {/* Hata mesajını burada gösteriyoruz */}
+
                 {error && <Typography color="error" sx={{ marginTop: "10px" }}>{error}</Typography>}
 
                 <Button onClick={handleLogin} className="login-button">Login</Button>

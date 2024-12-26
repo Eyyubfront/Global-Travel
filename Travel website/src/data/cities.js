@@ -1,9 +1,11 @@
 import baku from "../assets/cities/baku.jpg";
 import istanbul from "../assets/cities/istanbul.jpg";
-import japanes from "../assets/cities/japanes.jpg";
+import japaneses from "../assets/cities/japaneses.jpg";
 import maldives from "../assets/cities/maldives.jpg";
 import paris from "../assets/cities/paris.jpg";
-import dubai from "../assets/cities/dubai.jpg";
+import abdubai from "../assets/cities/abdubai.jpg";
+import sweden from "../assets/cities/sweden.jpg";
+import italys from "../assets/cities/italys.jpg";
 import airplaneone from "../assets/cities/airplane/cabinone.jpg";
 import airplanetwo from "../assets/cities/airplane/cabintwo.jpg";
 import airplanethree from "../assets/cities/airplane/cabinthree.jpg";
@@ -13,7 +15,7 @@ import airplanefive from "../assets/cities/airplane/cabinfive.jpg";
 export const cities = [
     { 
         id: 0, 
-        img: japanes, 
+        img: japaneses, 
         title: "Japanese", 
         citycountry:"Tokyo",
         price: 100, 
@@ -49,7 +51,7 @@ export const cities = [
     },
     { 
         id: 2, 
-        img: dubai, 
+        img: abdubai, 
         title: "Dubai", 
         citycountry:"Abu Dhabi",
         price: 200, 
@@ -90,7 +92,7 @@ export const cities = [
         citycountry:"Baku",
         price: 300, 
         days: 3, 
-        rating: 4.0, 
+        rating: 4.9, 
         reviews: 50,
         airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor,airplanefive],
         details: [
@@ -118,6 +120,53 @@ export const cities = [
             "Free shuttle service to major tourist attractions is available.",
             "A loyalty program is offered for returning guests."
         ]
+    },
+    { 
+        id: 6, 
+        img: sweden, 
+        title: "Sweden", 
+        citycountry: "Stockholm, Sweden", // Daha spesifik şehir ve ülke bilgisi
+        price: 500, 
+        days: 7, 
+        rating: 4.9, 
+        reviews: 140,
+        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor, airplanefive],
+        details: [
+            "Enjoy a complimentary dinner cruise along the Bosphorus for stays over 4 nights.",
+            "A cancellation fee of 50% applies to changes made within 72 hours.",
+            "Guests are advised to dress modestly when visiting religious sites.",
+            "Free shuttle service to major tourist attractions is available.",
+            "A loyalty program is offered for returning guests.",
+            "Stockholm, the capital of Sweden, is a stunning city built across 14 islands connected by over 50 bridges.",
+            "Explore the historical Gamla Stan (Old Town) or enjoy a boat tour of the archipelago.",
+            "Enjoy a wide variety of museums, including the famous Vasa Museum, showcasing the 17th-century warship.",
+            "Stockholm offers a mix of modern and historical architecture, with scenic views of the Baltic Sea.",
+            "Don't miss out on the Northern Lights if you're visiting the northern regions of Kiruna and Abisko."
+        ]
+    },
+    { 
+        id: 7, 
+        img: italys, 
+        title: "Italy", 
+        citycountry: "Rome, Italy", // Daha spesifik şehir ve ülke bilgisi
+        price: 500, 
+        days: 7, 
+        rating: 4.9, 
+        reviews: 140,
+        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor, airplanefive],
+        details: [
+            "Enjoy a complimentary dinner cruise along the Bosphorus for stays over 4 nights.",
+            "A cancellation fee of 50% applies to changes made within 72 hours.",
+            "Guests are advised to dress modestly when visiting religious sites.",
+            "Free shuttle service to major tourist attractions is available.",
+            "A loyalty program is offered for returning guests.",
+            "Rome, known as the Eternal City, is a place where ancient ruins meet modern life.",
+            "Must-see landmarks include the Colosseum, Roman Forum, and the Vatican Museums, home to Michelangelo's Sistine Chapel.",
+            "Vatican City, an independent city-state, houses the Pope and offers stunning religious and art treasures.",
+            "Visit the iconic Trevi Fountain and toss a coin to ensure your return to Rome.",
+            "Enjoy Italy’s world-famous cuisine, including pasta, pizza, and gelato, all while exploring charming piazzas."
+        ]
     }
+    
 ];
 

@@ -1,5 +1,5 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
-import './Travel.css'; // Import the CSS file
+import './Travel.css'; 
 
 const Travel = ({ title, many, text, src }) => {
     return (

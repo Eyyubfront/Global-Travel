@@ -1,12 +1,11 @@
 import { Box, Stack, Typography, Button, Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
-import BedIcon from '@mui/icons-material/Bed';
-import FlightIcon from '@mui/icons-material/Flight';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import globlack from "../../assets/globblack.png";
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import BurgerMenu from "../../Companents/Burgermenu";
 import { MdAddShoppingCart } from "react-icons/md";
+
 const HeadNav = ({ user, setUser }) => {
     const [userInitials, setUserInitials] = useState('');
     const [openLogoutDialog, setOpenLogoutDialog] = useState(false);
@@ -14,22 +13,21 @@ const HeadNav = ({ user, setUser }) => {
 
     useEffect(() => {
         if (user) {
-            // Eğer kullanıcı varsa, ismin baş harfini veya e-posta ilk harfini alıyoruz
             const initials = user.nameInitial || user.emailFirstLetter || '?';
-            setUserInitials(initials); // Baş harfini güncelliyoruz
+            setUserInitials(initials);
         }
-    }, [user]);  // Burada 'user' değiştiğinde yeniden çalışacak
+    }, [user]);
+
     const handleLogout = () => {
-        localStorage.removeItem("user"); // Kullanıcıyı çıkış yaparken localStorage'dan sil
-        setUser(null); // Kullanıcıyı state'ten sil
-        setOpenLogoutDialog(false); // Modal'ı kapatıyoruz
-        navigate("/");  // Anasayfaya yönlendiriyoruz
+        localStorage.removeItem("user");
+        setUser(null);
+        setOpenLogoutDialog(false);
+        navigate("/");
     };
-    
 
     const handleProfileClick = () => {
         if (user) {
-            navigate("/myacount");  // Profil sayfasına yönlendiriyoruz
+            navigate("/");
         }
     };
 
@@ -42,30 +40,25 @@ const HeadNav = ({ user, setUser }) => {
     };
 
     return (
-        <Stack padding="20px" flexDirection="row" justifyContent="space-between">
-            <Stack className="iconsonesd" flexDirection="row" alignItems="center" gap="10px">
-                <Stack gap="10px" alignItems="center" flexDirection="column">
-                    <Link style={{ cursor: "pointer", textDecoration: "none" }} to="/flightlist">
-                        <Stack color="black" flexDirection="row" alignItems="center" gap="10px">
-                            <FlightIcon />
-                            <Typography>Find Flight</Typography>
-                        </Stack>
-                    </Link>
-                </Stack>
-                <Box border="2px solid black" height="30px"></Box>
-                <Link style={{ cursor: "pointer", textDecoration: "none" }} to="/hotellist">
-                    <Stack color="black" flexDirection="row" alignItems="center" gap="10px">
-                        <BedIcon />
-                        <Typography>Find Hotels</Typography>
-                    </Stack>
-                </Link>
-            </Stack>
-
+        <Stack className="header_container" padding="20px" flexDirection="row" justifyContent="space-between">
             <Link to="/" style={{ cursor: "pointer" }}>
                 <Box>
                     <img src={globlack} alt="Logo" />
                 </Box>
             </Link>
+
+            <Stack gap="30px" flexDirection="row" alignItems="center">
+                <Link className="nav_head" to="/about" style={{ cursor: "pointer", color: "black", textDecoration: "none" }}>
+                    <Typography variant="h6">
+                        About
+                    </Typography>
+                </Link>
+                <Link className="nav_head" to="/contact" style={{ cursor: "pointer", textDecoration: "none", color: "black" }}>
+                    <Typography variant="h6">
+                        Contact
+                    </Typography>
+                </Link>
+            </Stack>
 
             <Stack className="iconsonesd" flexDirection="row" alignItems="center" gap="10px">
                 <Link to="/orders" style={{ cursor: "pointer", textDecoration: "none" }}>
@@ -90,7 +83,7 @@ const HeadNav = ({ user, setUser }) => {
                             sx={{ marginRight: 2, cursor: 'pointer' }}
                             onClick={handleProfileClick}
                         >
-                            {userInitials} {/* Baş harfini göster */}
+                            {userInitials}
                         </Typography>
                         <Button sx={{ color: "black", cursor: "pointer" }} onClick={handleOpenLogoutDialog}>Logout</Button>
                     </>
@@ -102,7 +95,7 @@ const HeadNav = ({ user, setUser }) => {
                             </Button>
                         </Link>
                         <Link style={{ textDecoration: "none" }} to="/signs">
-                            <Button variant="text" sx={{ width: "100px", color: "white", backgroundColor: "black" }}>
+                            <Button className="sign_btn" variant="text" sx={{ width: "100px", color: "white", backgroundColor: "black" }}>
                                 Sign up
                             </Button>
                         </Link>
@@ -111,8 +104,6 @@ const HeadNav = ({ user, setUser }) => {
             </Stack>
 
             <BurgerMenu />
-
-            {/* Logout Confirmation Dialog */}
             <Dialog
                 open={openLogoutDialog}
                 onClose={handleCloseLogoutDialog}
@@ -134,6 +125,3 @@ const HeadNav = ({ user, setUser }) => {
 };
 
 export default HeadNav;
-
-
-

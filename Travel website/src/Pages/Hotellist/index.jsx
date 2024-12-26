@@ -2,28 +2,31 @@ import React, { useState } from 'react';
 import { Box, Stack, TextField, MenuItem } from "@mui/material";
 import Hotelworld from "../../Companents/Hotelworld"; 
 import Footer from "../../Companents/Footer";
-import './hotellist.css'; // CSS dosyasını ekliyoruz
+import { AttachMoney, CalendarToday, Star } from '@mui/icons-material';
+import './hotellist.css'; 
 
 const Hotellist = () => {
-  const [priceFilter, setPriceFilter] = useState('all'); // 'all', 'ucuz', 'bahali'
-  const [daysValue, setDaysValue] = useState(''); // Varsayılan olarak boş
-  const [starsValue, setStarsValue] = useState(''); // Varsayılan olarak boş
+  const [priceFilter, setPriceFilter] = useState('all');
+  const [daysValue, setDaysValue] = useState('');
+  const [starsValue, setStarsValue] = useState('');
 
   const handleSearch = () => {
-    // Arama fonksiyonu
     console.log("Searching for hotels...");
   };
 
   return (
     <>
       <Box className="filter-container">
-        <Stack flexDirection="row" gap="20px" justifyContent="space-between" alignItems="center">
+        <Stack flexDirection="row" gap="20px" justifyContent="center" alignItems="center">
           <TextField
             select
-            label="Price Range"
             value={priceFilter}
             onChange={(e) => setPriceFilter(e.target.value)}
             className="filter-field"
+            variant="outlined"
+            InputProps={{
+              startAdornment: <AttachMoney sx={{ color: '#8DD3BB', marginRight: '10px' }} />
+            }}
           >
             <MenuItem value="all">All</MenuItem>
             <MenuItem value="ucuz">Cheap</MenuItem>
@@ -32,27 +35,33 @@ const Hotellist = () => {
 
           <TextField
             select
-            label="Number of Days"
             value={daysValue}
             onChange={(e) => setDaysValue(e.target.value)}
             className="filter-field"
+            variant="outlined"
+            InputProps={{
+              startAdornment: <CalendarToday sx={{ color: '#8DD3BB', marginRight: '10px' }} />
+            }}
           >
             <MenuItem value="">All</MenuItem>
-            {[1, 2, 3, 4, 5, 6, 7].map(day => (
-              <MenuItem key={day} value={day}>{day}</MenuItem>
+            {[...Array(10).keys()].map(day => (
+              <MenuItem key={day + 1} value={day + 1}>{day + 1}</MenuItem>
             ))}
           </TextField>
 
           <TextField
             select
-            label="Star Rating"
             value={starsValue}
             onChange={(e) => setStarsValue(e.target.value)}
             className="filter-field"
+            variant="outlined"
+            InputProps={{
+              startAdornment: <Star sx={{ color: '#8DD3BB', marginRight: '10px' }} />
+            }}
           >
             <MenuItem value="">All</MenuItem>
-            {[1, 2, 3, 4, 5].map(star => (
-              <MenuItem key={star} value={star}>{star} Star</MenuItem>
+            {[...Array(10).keys()].map(star => (
+              <MenuItem key={star + 1} value={star + 1}>{star + 1} Star</MenuItem>
             ))}
           </TextField>
         </Stack>

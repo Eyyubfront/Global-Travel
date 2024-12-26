@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stack, Typography, Box, Button } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
-import './Perfecttrip.css'; // Import the CSS file
+import './Perfecttrip.css'; 
 
 const Perfecttrip = ({ src, title, id }) => {
     const navigate = useNavigate();

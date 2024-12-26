@@ -6,11 +6,11 @@ const favoritesSlice = createSlice({
     reducers: {
         addFavorite: (state, action) => {
             state.push(action.payload);
-            localStorage.setItem('favorites', JSON.stringify(state)); // Local storage'a kaydet
+            localStorage.setItem('favorites', JSON.stringify(state)); 
         },
         removeFavorite: (state, action) => {
             const updatedFavorites = state.filter(fav => fav.id !== action.payload);
-            localStorage.setItem('favorites', JSON.stringify(updatedFavorites)); // Güncellenmiş veriyi kaydet
+            localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
             return updatedFavorites;
         },
     },

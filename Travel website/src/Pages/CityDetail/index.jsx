@@ -12,11 +12,11 @@ import CheckIcon from '@mui/icons-material/Check';
 import { addOrder } from '../../features/ordersSlice';
 import OrderModal from '../../Companents/OrderModal';
 import './CityDetail.css';
-
 const CityDetail = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const favorites = useSelector(state => state.favorites);
+    const user = useSelector(state => state.user); 
     const city = cities.find(city => city.id === Number(id));
 
     const [message, setMessage] = useState(null);
@@ -25,24 +25,36 @@ const CityDetail = () => {
     const [quantity, setQuantity] = useState(1);
 
     if (!city) {
-        return <Typography variant="h6">Şehir bulunamadı.</Typography>;
+        return <Typography variant="h6">City not found.</Typography>;
     }
 
     const isFavorite = favorites.some(fav => fav.id === city.id);
-
     const handleToggleFavorite = () => {
+        if (!user) {
+            setMessage('Please log in to add to favorites');
+            setFadeOut(false);
+            setTimeout(() => setFadeOut(true), 3000);
+            return;
+        }
+
         if (isFavorite) {
             dispatch(removeFavorite(city.id));
-            setMessage('Favorilerden çıkarıldı');
+            setMessage('Removed from favorites');
         } else {
-            dispatch(addFavorite({ ...city }));
-            setMessage('Favorilere eklendi');
+            dispatch(addFavorite({ ...city, type: 'city' }));
+            setMessage('Added to favorites');
         }
         setFadeOut(false);
         setTimeout(() => setFadeOut(true), 3000);
     };
 
     const handleOrderClick = () => {
+        if (!user) {
+            setMessage('Please log in to place an order');
+            setFadeOut(false);
+            setTimeout(() => setFadeOut(true), 3000);
+            return;
+        }
         setModalOpen(true);
     };
 
@@ -55,8 +67,9 @@ const CityDetail = () => {
             city: city.name,
             quantity: quantity,
             img: city.img,
+            rating: city.rating,
+            reviews: city.reviews
         };
-    
         dispatch(addOrder(orderData));
         setModalOpen(false);
         setQuantity(1);
@@ -74,9 +87,10 @@ const CityDetail = () => {
                     </Box>
                 )}
 
-                <Stack alignItems="center" flexDirection="row" justifyContent="space-between">
+               
+                <Stack className='top_citydata' alignItems="center" flexDirection="row" justifyContent="space-between">
                     <Stack flexDirection="column" gap="10px">
-                        <Stack alignItems="center" flexDirection="row">
+                        <Stack className='city_boxtop' alignItems="center" flexDirection="row">
                             <Typography variant="h3" fontWeight="bold">{city.title}</Typography>
                             <ArrowRightAltIcon sx={{ color: '#8DD3BB' }} />
                             <Typography variant="h4" color="textSecondary">{city.citycountry}</Typography>
@@ -104,13 +118,15 @@ const CityDetail = () => {
                 <Box sx={{ marginTop: "15px", marginBottom: "10px" }}>
                     <img src={city.img} className="city-images" alt={city.title} />
                 </Box>
-                
+
+          
                 <Stack alignItems="center" flexDirection="row" justifyContent="center" flexWrap="wrap">
                     {city.airplanes.map((plane, index) => (
-                        <img key={index} src={plane} className="plane-image" alt={`Plane ${index + 1}`} />
+                        <img key={index} src={plane} className="planeimage" alt={`Plane ${index + 1}`} />
                     ))}
                 </Stack>
-                
+
+        
                 <Box marginTop="20px">
                     <Typography variant='h4' fontWeight="bold" marginBottom="10px">Information</Typography>
                     <Box component="ul" sx={{ marginTop: "20px", paddingLeft: "20px" }}>
@@ -122,15 +138,16 @@ const CityDetail = () => {
             </Box>
 
             <Footer />
-            <OrderModal 
-                open={modalOpen} 
-                onClose={() => setModalOpen(false)} 
-                onConfirm={handleConfirmOrder} 
+            <OrderModal
+                open={modalOpen}
+                onClose={() => setModalOpen(false)}
+                onConfirm={handleConfirmOrder}
                 quantity={quantity}
                 setQuantity={setQuantity}
             />
         </>
     );
 };
+
 
 export default CityDetail;

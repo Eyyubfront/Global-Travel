@@ -21,6 +21,9 @@
     opacity: 0;
 }
 
+.hotelword_cards{
+    margin-top: 15px;
+}
 .hotel-card {
     border-radius: 16px;
     width: 260px;
@@ -73,13 +76,19 @@ height: 26vh !important;
 }
 
 .hoteltop_name {
-    font-weight: bold;
+    font-weight: bold !important;
     font-size: 2rem;
     margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 990px) {
     .hotel-card {
         width: 100%;
     }
 }
+@media (min-width: 991px) and (max-width: 1440px) {
+  .hotelword_cards{
+    justify-content: center !important;
+  }
+}
+

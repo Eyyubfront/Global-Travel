@@ -1,6 +1,7 @@
 .worldtravel-container {
     position: relative;
     padding: 20px;
+  
 }
 
 .notification {
@@ -49,6 +50,9 @@
     object-fit: cover;
     border-radius: 12px;
 }
+.flight_card{
+    margin-top: 10px !important;
+}
 
 .city-title {
     font-weight: 600;
@@ -78,8 +82,15 @@
     margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 990px) {
     .city-card {
         width: 100%;
+    }
+}
+
+
+@media (min-width: 991px) and (max-width: 1440px) {
+    .flight_card{
+        justify-content: center !important;
     }
 }

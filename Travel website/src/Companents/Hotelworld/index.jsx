@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
-import { Box, Button, Stack, Typography, IconButton } from "@mui/material";
+import { Box, Button, Stack, Typography, IconButton, Pagination } from "@mui/material";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import CheckIcon from '@mui/icons-material/Check';
-import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { Link } from 'react-router-dom';
 import hotels from '../../data/hotel';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, removeFavorite } from '../../features/favoritesSlice';
-import './Hotelworld.css'; 
 import { addOrder } from '../../features/ordersSlice';
+import './Hotelworld.css';
 
 const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
     const dispatch = useDispatch();
     const favorites = useSelector(state => state.favorites);
+    const user = useSelector(state => state.user); 
     const [message, setMessage] = useState(null);
     const [fadeOut, setFadeOut] = useState(false);
+    
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 3;
 
-    // Filtreleme işlemleri
     const filteredHotels = hotels.filter(hotel => {
         const matchesPrice = priceFilter === 'all' ||
             (priceFilter === 'ucuz' && hotel.price <= 250) ||
@@ -28,21 +30,44 @@ const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
         return matchesPrice && matchesDays && matchesStars;
     });
 
-    // Favorilere ekle/çıkarma işlemi
+    const totalPages = Math.ceil(filteredHotels.length / itemsPerPage);
+
+    const handlePageChange = (event, value) => {
+        setCurrentPage(value);
+    };
+
+    const currentHotels = filteredHotels.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    );
+
     const handleAddToFavorites = (hotel) => {
+        if (!user) {
+            setMessage('You must be logged in to perform this action');
+            setFadeOut(false);
+            setTimeout(() => setFadeOut(true), 3000);
+            return;
+        }
+
         if (favorites.some(fav => fav.id === hotel.id)) {
             dispatch(removeFavorite(hotel.id));
-            setMessage('Favorilerden çıkarıldı');
+            setMessage('Removed from favorites');
         } else {
             dispatch(addFavorite({ ...hotel, type: 'hotel' }));
-            setMessage('Favorilere eklendi');
+            setMessage('Added to favorites');
         }
         setFadeOut(false);
         setTimeout(() => setFadeOut(true), 3000);
     };
 
-    // Sipariş ekleme işlemi
     const handleAddToOrders = (hotel) => {
+        if (!user) {
+            setMessage('You must be logged in to place an order');
+            setFadeOut(false);
+            setTimeout(() => setFadeOut(true), 3000);
+            return;
+        }
+
         const order = {
             id: hotel.id,
             title: hotel.name,
@@ -52,7 +77,7 @@ const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
             img: hotel.image,
             quantity: 1,
         };
-        dispatch(addOrder(order)); // Sipariş ekleme
+        dispatch(addOrder(order)); 
     };
 
     return (
@@ -60,14 +85,14 @@ const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
             {message && (
                 <Box className={`notification ${fadeOut ? 'fade-out' : ''}`}>
                     <Stack flexDirection="row" alignItems="center">
-                        <CheckIcon style={{ color: 'green', marginRight: '5px' }} />
-                        <Typography variant="body2" color="green">{message}</Typography>
+                        <CheckIcon style={{ color: 'red', marginRight: '5px' }} />
+                        <Typography variant="body2" color="red">{message}</Typography>
                     </Stack>
                 </Box>
             )}
             <Typography className='hoteltop_name' variant="h4">Available Hotels</Typography>
-            <Stack gap="20px" flexDirection="row" marginLeft="24px" flexWrap="wrap">
-                {filteredHotels.map(hotel => (
+            <Stack className='hotelword_cards' gap="20px" flexDirection="row" marginLeft="24px" flexWrap="wrap">
+                {currentHotels.map(hotel => (
                     <Box key={hotel.id} className="hotel-card">
                         <Stack direction="column" spacing={2} className="card-inner">
                             <Box className="hotel-image-container">
@@ -76,26 +101,21 @@ const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
                             <Typography variant="h6" className="hotel-title">{hotel.name}</Typography>
                             <Stack direction="row" justifyContent="space-between" alignItems="center">
                                 <Stack direction="row" spacing={1} alignItems="center">
-                                  
-                                  
                                     <Typography variant="body2">{hotel.location}</Typography>
                                 </Stack>
-                               
                                 <Stack direction="column" alignItems="flex-end">
                                     <Typography variant="h6" color="error">${hotel.price}</Typography>
-                                    <Typography variant="body2" color="textSecondary">
-                                        {hotel.days} days
-                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary">{hotel.days} days</Typography>
                                 </Stack>
                             </Stack>
                             <Stack marginTop="20px" alignItems="center" flexDirection="row" gap="10px">
-                                         <Stack alignItems="center" flexWrap="wrap" flexDirection="row" gap="10px" style={{ color: "orange" }}>
-                                       {[...Array(hotel.stars)].map((_, starIndex) => (
-                                                <StarBorderIcon key={starIndex} />
-                                            ))}
-                                        </Stack>
-                                        <Typography>{hotel.stars} Star Hotel</Typography>
-                                    </Stack>
+                                <Stack alignItems="center" flexWrap="wrap" flexDirection="row" gap="10px" style={{ color: "orange" }}>
+                                    {[...Array(hotel.stars)].map((_, starIndex) => (
+                                        <StarBorderIcon key={starIndex} />
+                                    ))}
+                                </Stack>
+                                <Typography>{hotel.stars} Star Hotel</Typography>
+                            </Stack>
                             <Stack direction="row" spacing={2} justifyContent="space-between" alignItems="center">
                                 <IconButton onClick={() => handleAddToFavorites(hotel)}>
                                     {favorites.some(fav => fav.id === hotel.id) ? (
@@ -112,7 +132,17 @@ const Hotelworld = ({ priceFilter, daysValue, starsValue }) => {
                     </Box>
                 ))}
             </Stack>
+            
+            <Box display="flex" justifyContent="center" marginTop="20px">
+                <Pagination
+                    count={totalPages}
+                    page={currentPage}
+                    onChange={handlePageChange}
+                    color="primary"
+                />
+            </Box>
         </Box>
     );
 }
+
 export default Hotelworld;
