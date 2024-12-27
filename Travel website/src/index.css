@@ -10,10 +10,8 @@
 .header_container{
     position: sticky;
     z-index: 9999999;
-   
     background-color: white;
     width: 96%;
-
 }
 .nav_head {
     border-bottom: 2px solid transparent;  
@@ -81,7 +79,9 @@ height: 500px !important;
         width: 150px;
     }
     .header_container{
-        width: 79% !important;
+        width: 70% !important;
+        justify-content: center !important;
+        gap: 20px !important;
     }
    .headnavlinkspage{
     display: none !important;

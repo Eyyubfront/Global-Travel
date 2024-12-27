@@ -1,17 +1,17 @@
 .footer-container {
     background: #8DD3BB;
-    padding: 6px;
-    margin-top: 13%;
+
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-box {
-    margin-top: -70px;
-    margin-left: 100px;
+    margin: 0 auto; /* Center the footer */
     border-radius: 20px;
     background-color: #CDEAE1 !important;
     padding: 10px;
     width: 85%;
-    height: 250px;
+    max-width: 1200px; /* Optional: Set a max width */
     box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.05);
 }
 
@@ -79,8 +79,8 @@
 
 @media (max-width: 600px) {
     .footer-container {
-        padding: 20px;
-    margin-top: 14% !important;
+       
+
     }
     .footer-content{
 flex-direction: column !important;
@@ -129,16 +129,19 @@ gap: 30px !important;
         width: 80px;
         margin: 10px auto;
     }
+
 }
 
 
 @media (max-width: 991px) {
     .footer-container {
-        padding: 20px;
+
+     
     }
 
     .footer-box {
         margin-left: 0;
+        padding: 0px !important;
         width: 100%;
         height: auto;
     }
@@ -180,7 +183,8 @@ gap: 30px !important;
 
 @media (min-width: 991px) and (max-width: 1440px) {
     .footer-container {
-        padding: 20px;
+      
+  
     }
 
     .footer-box {
