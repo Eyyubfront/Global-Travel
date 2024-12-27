@@ -23,16 +23,12 @@ const LandingPages = () => {
         <Box className="landing-banner" style={{ backgroundImage: `url(${landingone})` }}>
           <div className="App" >
             <img src={airplane} alt="Uçak" className="airplane" />
-        </div>
-          <Stack gap="10px" textAlign="center" flexDirection="column">
+           </div>
+          <Stack className="bacgroundtext" gap="10px" textAlign="center" flexDirection="column">
             <Typography className="landing-title" variant="h5">Helping Others</Typography>
             <Typography className="landing-main-title" variant="h2">Live & Travel</Typography>
             <Typography className="landing-subtitle">Special offers to suit your plan</Typography>
           </Stack>
-
-    
-
-     
         </Box>
       </Box>
       <Box>
@@ -49,7 +45,7 @@ const LandingPages = () => {
       </Box>
 
       <Box>
-        <Stack justifyContent="center" gap="30px" flexDirection="row" flexWrap="wrap">
+        <Stack className="perfectslanding" justifyContent="center" gap="30px" flexDirection="row" flexWrap="wrap">
           {cities.map((city) => (
             <Grid key={city.id} item xs={12} sm={4} md={4}>
               <Perfecttrip

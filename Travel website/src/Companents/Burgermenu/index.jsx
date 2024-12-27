@@ -28,7 +28,6 @@ const BurgerMenu = ({ user, setUser }) => {
                             </Link>
                             <Box border="1px solid #ccc" width="100%" marginTop="20px" />
 
-                            {/* User Profile / Auth */}
                             <Stack flexDirection="column" alignItems="center" gap="20px">
                                 {user ? (
                                     <>

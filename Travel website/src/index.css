@@ -4,7 +4,9 @@
     font-family: "Poppins", sans-serif !important;
    padding: 0;
 }
-
+.burger_menu {
+    display: none;
+}
 .header_container{
     position: sticky;
     z-index: 9999999;
@@ -72,6 +74,18 @@
     .Container {
         max-width: 540px;
     }
+    .landing-banner{
+height: 500px !important;
+    }
+    .airplane{
+        width: 150px;
+    }
+    .header_container{
+        width: 79% !important;
+    }
+   .headnavlinkspage{
+    display: none !important;
+   }
   .nav_items{
     display: none !important;
   }
@@ -341,7 +355,8 @@
         display: none !important; 
     }
     .header_container{
-        gap: 7px !important;
+        gap: 9px !important;
+        width: 93% !important;
     }
     .sign_btn{
         width: 86px !important;
@@ -355,7 +370,5 @@
         display: none !important;
     }
 }
-
-
 
 

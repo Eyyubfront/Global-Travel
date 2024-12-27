@@ -12,7 +12,7 @@ const Perfecttrip = ({ src, title, id }) => {
 
     return (
         <Box className="perfecttrip-container" onClick={handleClick}>
-            <Stack flexWrap="wrap" flexDirection="row" alignItems="center" gap="10px">
+            <Stack className='perfect_card' flexWrap='wrap' flexDirection="row" alignItems="center" gap="10px">
                 <Box>
                     <img src={src} className="perfecttrip-image" alt={title} />
                 </Box>

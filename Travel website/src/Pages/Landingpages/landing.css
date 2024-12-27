@@ -1,100 +1,116 @@
 .landing-banner {
-    background-repeat: no-repeat;
-    height: 800px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .landing-form {
-    background-color: white;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    padding: 10px;
-    position: absolute;
-    top: 60%;
-    left: 15%;
-    width: 67%;
-    height: 220px;
-    border-radius: 20px !important;
+  background-repeat: no-repeat;
+  height: 800px;
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+}
 
-  }
-  
-  .boxicons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .icon-text {
-    color: black;
-  }
-  
-  .divider {
-    border-right: 1px solid #D7E2EE;
-    width: 21px;
-    height: 35px;
-  }
-  
-  .text-field-container {
-    position: absolute;
-    left: 100px;
-    top: 80px;
-    z-index: 10;
-  }
-  
-  .adpromo {
-    position: absolute;
-    right: 20px;
-    top: 140px;
-    margin-top: 20px;
-  }
-  
-  .show-flights-button {
-    height: 50px;
-    background-color: #8DD3BB !important;
+.landing-form {
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  padding: 10px;
+  position: absolute;
+  top: 60%;
+  left: 15%;
+  width: 67%;
+  height: 220px;
+  border-radius: 20px !important;
+
+}
+
+.boxicons {
+  display: flex;
+  align-items: center;
+}
+
+.icon-text {
+  color: black;
+}
+
+.divider {
+  border-right: 1px solid #D7E2EE;
+  width: 21px;
+  height: 35px;
+}
+
+.text-field-container {
+  position: absolute;
+  left: 100px;
+  top: 80px;
+  z-index: 10;
+}
+
+.adpromo {
+  position: absolute;
+  right: 20px;
+  top: 140px;
+  margin-top: 20px;
+}
+
+.show-flights-button {
+  height: 50px;
+  background-color: #8DD3BB !important;
 color: black;
-  }
-  
-  .landing-title {
-    color: white;
-  }
-  
-  .landing-main-title {
-    color: white;
-  }
-  
-  .landing-subtitle {
-    color: white;
-  }
-  
-  .plantrip {
-    padding: 20px;
-  }
-  
-  .see-more-button {
-    border: 1px solid #8DD3BB !important;
-    color: black !important;
-  }
-  
-  .airplane {
-    position: absolute;
-    width: 380px;
-    animation: fly 8s linear infinite;
-    top: 0; 
-    transform: translateY(0); 
+}
+
+.landing-title {
+  color: white;
+}
+
+.landing-main-title {
+  color: white;
+}
+
+.landing-subtitle {
+  color: white;
+}
+
+.plantrip {
+  padding: 20px;
+}
+
+.see-more-button {
+  border: 1px solid #8DD3BB !important;
+  color: black !important;
+}
+
+.airplane {
+  position: absolute;
+  width: 380px;
+  animation: fly 8s linear infinite;
+  top: 0; 
+  transform: translateY(0); 
 }
 
 @keyframes fly {
-    0% {
-        left: -100px; 
-   
-    }
-    50% {
-        left:70%; 
-    }
-    100% {
-        left: -100px; 
-    }
+0% {
+  left: 36px;
 }
 
+50% {
+  left: 0%;
+}
+
+100% {
+  left: 47px;
+}
+}
+
+@media (max-width: 600px) {
+.perfectslanding{
+  flex-wrap: nowrap !important;
+  flex-direction: column !important;
+}
+.plantrip{
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.bacgroundtext{
+  width: 100% !important;
+}
+} 

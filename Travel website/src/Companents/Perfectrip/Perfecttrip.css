@@ -26,3 +26,15 @@
     color: black !important;
     border-radius: 4px;
 }
+@media (max-width: 600px) {
+    .perfect_card{
+        flex-direction: column !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+    }
+    .perfecttrip-container{
+        width: 81% !important;
+        padding: 3px !important;
+        margin: auto;
+    }
+}
