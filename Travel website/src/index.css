@@ -3,6 +3,10 @@
     margin: 0;
     font-family: "Poppins", sans-serif !important;
    padding: 0;
+
+}
+body{
+    height: 100% !important;
 }
 .burger_menu {
     display: none;
@@ -81,7 +85,7 @@ height: 500px !important;
     .header_container{
         width: 70% !important;
         justify-content: center !important;
-        gap: 20px !important;
+        gap: 50px !important;
     }
    .headnavlinkspage{
     display: none !important;

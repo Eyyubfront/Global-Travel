@@ -12,6 +12,9 @@
     align-items: center;
     margin-top: 13px;
 }
+.favbox{
+    min-height: 300px;
+}
 
 .favorite-item:hover {
     transform: translateY(-10px);

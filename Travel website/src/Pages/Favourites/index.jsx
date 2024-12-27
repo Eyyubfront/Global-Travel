@@ -31,7 +31,7 @@ const Favourites = () => {
 
     return (
         <>
-            <Box padding="20px">
+            <Box className="favbox" padding="20px">
                 <Typography className='topfavname' variant="h4">Your Favorites</Typography>
                 {favorites.length === 0 ? (
                     <Typography>No favorites added yet.</Typography>

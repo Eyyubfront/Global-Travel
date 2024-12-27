@@ -86,6 +86,7 @@
 flex-direction: column !important;
 align-items: center !important;
 text-align: center;
+gap: 20px;
     }
 
     .footer-box {
@@ -94,10 +95,6 @@ text-align: center;
         height: auto;
     }
 
-    .footer-content {
-        flex-direction: column;
-        gap: 20px;
-    }
 
     .footer-email-input {
         width: 100%;
@@ -149,6 +146,7 @@ gap: 30px !important;
     .footer-content {
         flex-direction: column;
         gap: 20px;
+        padding: 10px;
     }
 
     .footer-email-input {

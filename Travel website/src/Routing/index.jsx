@@ -14,6 +14,7 @@ import Orders from '../Pages/Orders';
 import About from '../Pages/About';
 import Contact from '../Pages/Contact';
 
+
 const Routing = () => {
     const user = useSelector(state => state.user);
     const dispatch = useDispatch();
@@ -41,6 +42,7 @@ const Routing = () => {
                 <Route path="/city/:id" element={<CityDetail />} />
                 <Route path="/favourites" element={<Favourites />} />
                 <Route path="/orders" element={<Orders />} />
+      
             </Routes>
         </>
     );
