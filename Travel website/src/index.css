@@ -12,7 +12,7 @@ body{
     display: none;
 }
 .header_container{
-    position: sticky;
+    position: fixed;
     z-index: 9999999;
     background-color: white;
     width: 96%;
@@ -71,6 +71,9 @@ body{
     width: 59% !important;
     height: 73% !important;
 }
+.header_container{
+    width: 98%;
+}
 
   @media (max-width: 600px) {
     .Container {
@@ -81,11 +84,7 @@ height: 500px !important;
     }
     .airplane{
         width: 150px;
-    }
-    .header_container{
-        width: 70% !important;
-        justify-content: center !important;
-        gap: 50px !important;
+        margin-top: 40px !important;
     }
    .headnavlinkspage{
     display: none !important;
@@ -358,10 +357,7 @@ height: 500px !important;
     .burger_menu {
         display: none !important; 
     }
-    .header_container{
-        gap: 9px !important;
-        width: 93% !important;
-    }
+ 
     .sign_btn{
         width: 86px !important;
     }

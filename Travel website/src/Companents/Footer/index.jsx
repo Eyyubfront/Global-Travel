@@ -58,7 +58,7 @@ const Footer = () => {
         </Stack>
 
       <Box>
-        <Typography>
+        <Typography className='footer_coperright'>
         All rights reserved Global Travel© 2024
         </Typography>
       </Box>

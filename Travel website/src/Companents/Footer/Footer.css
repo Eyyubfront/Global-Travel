@@ -1,17 +1,17 @@
 .footer-container {
     background: #8DD3BB;
-
+margin-top: 15px ;
     bottom: 0;
     width: 100%;
 }
 
 .footer-box {
-    margin: 0 auto; /* Center the footer */
+    margin: 0 auto;
     border-radius: 20px;
     background-color: #CDEAE1 !important;
     padding: 10px;
     width: 85%;
-    max-width: 1200px; /* Optional: Set a max width */
+    max-width: 1200px;
     box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.05);
 }
 
@@ -58,7 +58,7 @@
 }
 
 .linesborders {
-    border: 1px solid black !important; 
+    border: 1px solid black !important;
     max-width: 100% !important;
     margin-top: 8px;
 }
@@ -79,14 +79,18 @@
 
 @media (max-width: 600px) {
     .footer-container {
-       
-
+        margin-top: 15px !important;
     }
-    .footer-content{
-flex-direction: column !important;
-align-items: center !important;
-text-align: center;
-gap: 20px;
+    .footer_coperright{
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+        gap: 20px;
     }
 
     .footer-box {
@@ -105,17 +109,20 @@ gap: 20px;
     }
 
     .footer-emoji {
-        width: 150px;
+        width: 150px !important;
         align-self: center;
     }
 
     .footer-services {
-        flex-direction: column  !important;
+        flex-direction: column !important;
         gap: 10px;
         text-align: center;
     }
-    .footer-bottom{
-gap: 30px !important;
+
+    .footer-bottom {
+        gap: 30px !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 
     .footer_text {
@@ -132,8 +139,7 @@ gap: 30px !important;
 
 @media (max-width: 991px) {
     .footer-container {
-
-     
+        margin-top: 15px !important;
     }
 
     .footer-box {
@@ -181,8 +187,7 @@ gap: 30px !important;
 
 @media (min-width: 991px) and (max-width: 1440px) {
     .footer-container {
-      
-  
+        margin-top: 15px !important;
     }
 
     .footer-box {

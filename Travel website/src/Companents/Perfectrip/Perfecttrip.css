@@ -31,10 +31,11 @@
         flex-direction: column !important;
         align-items: center !important;
         flex-wrap: nowrap !important;
+        text-align: center;
     }
     .perfecttrip-container{
         width: 81% !important;
-        padding: 3px !important;
+        padding: 5px !important;
         margin: auto;
     }
 }
