@@ -15,7 +15,12 @@ body{
     position: fixed;
     z-index: 9999999;
     background-color: white;
+<<<<<<< HEAD
+   
+
+=======
     width: 96%;
+>>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
 }
 .nav_head {
     border-bottom: 2px solid transparent;  
@@ -64,12 +69,12 @@ body{
 .MuiPaper-root{
     background-color: white !important;
 }
-.css-m9glnp-MuiPaper-root-MuiDialog-paper{
+.MuiPaper-root{
     position: absolute !important;
     right: 0 !important;
     top: 0 !important;
     width: 59% !important;
-    height: 73% !important;
+    height:max-content !important;
 }
 .header_container{
     width: 98%;
@@ -79,6 +84,11 @@ body{
     .Container {
         max-width: 540px;
     }
+<<<<<<< HEAD
+    .header_links{
+        display: none !important;
+    }
+=======
     .landing-banner{
 height: 500px !important;
     }
@@ -89,6 +99,7 @@ height: 500px !important;
    .headnavlinkspage{
     display: none !important;
    }
+>>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
   .nav_items{
     display: none !important;
   }

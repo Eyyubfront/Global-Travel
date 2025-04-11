@@ -28,6 +28,10 @@ const BurgerMenu = ({ user, setUser }) => {
                             </Link>
                             <Box border="1px solid #ccc" width="100%" marginTop="20px" />
 
+<<<<<<< HEAD
+                           
+=======
+>>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
                             <Stack flexDirection="column" alignItems="center" gap="20px">
                                 {user ? (
                                     <>
@@ -41,10 +45,10 @@ const BurgerMenu = ({ user, setUser }) => {
                                     </>
                                 ) : (
                                     <>
-                                        <Link to="/logins" style={{ textDecoration: "none" }}>
+                                        <Link to="/login" style={{ textDecoration: "none" }}>
                                             <Button sx={{ color: "black" }}>Login</Button>
                                         </Link>
-                                        <Link to="/signs" style={{ textDecoration: "none" }}>
+                                        <Link to="/signup" style={{ textDecoration: "none" }}>
                                             <Button variant="outlined" sx={{ width: "120px", color: "black", borderColor: "black" }}>
                                                 Sign up
                                             </Button>

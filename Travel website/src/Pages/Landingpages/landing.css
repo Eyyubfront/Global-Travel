@@ -1,4 +1,25 @@
 .landing-banner {
+<<<<<<< HEAD
+    background-repeat: no-repeat;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .landing-form {
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    padding: 10px;
+    position: absolute;
+    top: 60%;
+    left: 15%;
+    width: 67%;
+    height: 220px;
+    border-radius: 20px !important;
+=======
   background-repeat: no-repeat;
   height: 800px;
   max-width: 100%;
@@ -9,6 +30,7 @@
   flex-direction: column;
   background-size: cover;
 }
+>>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
 
 .landing-form {
   background-color: white;

@@ -1,30 +1,42 @@
 .perfecttrip-container {
-    border-radius: 16px;
-    width: 300px;
-    padding: 20px;
-    box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.09);
-    transform: scale(1);
-    margin: 10px;
-    cursor: pointer; 
+  border-radius: 16px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.09);
+  transform: scale(1);
+  margin: 10px;
+  cursor: pointer;
 }
-.perfecttrip-container:hover{
-    transform: scale(0.9) !important;
+.perfecttrip-container:hover {
+  transform: scale(0.9) !important;
 }
 
 .perfecttrip-image {
-    width: 140px;
-    height: 108px;
-    object-fit: cover;
+  width: 140px;
+  height: 108px;
+  object-fit: cover;
 }
 
 .perfecttrip-title {
-    font-family: "Montserrat";
+  font-family: "Montserrat";
 }
 
 .perfecttrip-button {
-    background-color: #8DD3BB !important;
-    color: black !important;
-    border-radius: 4px;
+  background-color: #8dd3bb !important;
+  color: black !important;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .perfecttrip-container {
+    width: min-content;
+  }
+  .MuiStack-root{
+    justify-content: center;
+  }
+  .MuiTypography-root{
+    text-align: center;
+  }
 }
 @media (max-width: 600px) {
     .perfect_card{
