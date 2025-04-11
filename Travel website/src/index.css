@@ -15,12 +15,8 @@ body{
     position: fixed;
     z-index: 9999999;
     background-color: white;
-<<<<<<< HEAD
    
 
-=======
-    width: 96%;
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
 }
 .nav_head {
     border-bottom: 2px solid transparent;  
@@ -84,22 +80,9 @@ body{
     .Container {
         max-width: 540px;
     }
-<<<<<<< HEAD
     .header_links{
         display: none !important;
     }
-=======
-    .landing-banner{
-height: 500px !important;
-    }
-    .airplane{
-        width: 150px;
-        margin-top: 40px !important;
-    }
-   .headnavlinkspage{
-    display: none !important;
-   }
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
   .nav_items{
     display: none !important;
   }

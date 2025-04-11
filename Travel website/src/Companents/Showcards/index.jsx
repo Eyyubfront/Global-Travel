@@ -12,11 +12,7 @@ const Showcards = () => {
       <Stack className="showcards-container" flexDirection="row"  justifyContent="center" gap="13%">
         <Box className="hotels-card" sx={{ backgroundImage: `url(${hotelsone})` }}>
           <Stack className="card-content" flexDirection="column"gap="20px" >
-<<<<<<< HEAD
           
-=======
-       
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
             <Link style={{ textDecoration: "none" }} to="/flightlist">
               <Button className="card-button" >
                 <Stack color="black" alignItems="center" flexDirection="row" gap="10px">
@@ -30,11 +26,7 @@ const Showcards = () => {
 
         <Box className="hotels-card" sx={{ backgroundImage: `url(${hotelstwo})` }}>
           <Stack className="card-content" gap="20px" flexDirection="column" >
-<<<<<<< HEAD
        
-=======
-         
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
             <Link style={{ textDecoration: "none" }} to="/hotellist">
               <Button className="card-button" >
                 <Stack  alignItems="center"  color="black" flexDirection="row" gap="10px">

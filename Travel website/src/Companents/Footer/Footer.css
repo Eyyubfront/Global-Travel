@@ -1,5 +1,4 @@
 .footer-container {
-<<<<<<< HEAD
   background: #8dd3bb;
   padding: 6px;
   margin-top: 13%;
@@ -14,22 +13,6 @@
   width: 85%;
   height: 250px;
   box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.05);
-=======
-    background: #8DD3BB;
-margin-top: 15px ;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-box {
-    margin: 0 auto;
-    border-radius: 20px;
-    background-color: #CDEAE1 !important;
-    padding: 10px;
-    width: 85%;
-    max-width: 1200px;
-    box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.05);
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
 }
 
 .footer-content {
@@ -75,15 +58,9 @@ margin-top: 15px ;
 }
 
 .linesborders {
-<<<<<<< HEAD
   border: 1px solid black !important;
   max-width: 100% !important;
   margin-top: 8px;
-=======
-    border: 1px solid black !important;
-    max-width: 100% !important;
-    margin-top: 8px;
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
 }
 
 .footer-logo {
@@ -100,28 +77,11 @@ margin-top: 15px ;
 }
 
 @media (max-width: 600px) {
-<<<<<<< HEAD
   .footer-content {
     flex-direction: column !important;
     align-items: center !important;
     text-align: center;
   }
-=======
-    .footer-container {
-        margin-top: 15px !important;
-    }
-    .footer_coperright{
-        width: 100% !important;
-        text-align: center !important;
-    }
-
-    .footer-content {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center;
-        gap: 20px;
-    }
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
 
   .footer-box {
     margin-left: 0;
@@ -129,13 +89,10 @@ margin-top: 15px ;
     height: auto;
   }
 
-<<<<<<< HEAD
   .footer-content {
     flex-direction: column;
     gap: 20px;
   }
-=======
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
 
   .footer-email-input {
     width: 100%;
@@ -145,7 +102,6 @@ margin-top: 15px ;
     width: 100%;
   }
 
-<<<<<<< HEAD
   .footer-emoji {
     width: 150px;
     align-self: center;
@@ -159,45 +115,18 @@ margin-top: 15px ;
   .footer-bottom {
     gap: 30px !important;
   }
-=======
-    .footer-emoji {
-        width: 150px !important;
-        align-self: center;
-    }
-
-    .footer-services {
-        flex-direction: column !important;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .footer-bottom {
-        gap: 30px !important;
-        flex-direction: column !important;
-        align-items: center !important;
-    }
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
 
   .footer_text {
     width: 100%;
   }
 
-<<<<<<< HEAD
   .footer-logo {
     width: 80px;
     margin: 10px auto;
   }
-=======
-    .footer-logo {
-        width: 80px;
-        margin: 10px auto;
-    }
-
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
 }
 
 @media (max-width: 991px) {
-<<<<<<< HEAD
   .footer-container {
     padding: 20px;
     margin-top: 22% !important;
@@ -213,24 +142,6 @@ margin-top: 15px ;
     flex-direction: column;
     gap: 20px;
   }
-=======
-    .footer-container {
-        margin-top: 15px !important;
-    }
-
-    .footer-box {
-        margin-left: 0;
-        padding: 0px !important;
-        width: 100%;
-        height: auto;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 20px;
-        padding: 10px;
-    }
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
 
   .footer-email-input {
     width: 100%;
@@ -262,15 +173,9 @@ margin-top: 15px ;
 }
 
 @media (min-width: 991px) and (max-width: 1440px) {
-<<<<<<< HEAD
   .footer-container {
     padding: 20px;
   }
-=======
-    .footer-container {
-        margin-top: 15px !important;
-    }
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
 
   .footer-box {
     margin-left: 50px;
@@ -299,14 +204,7 @@ margin-top: 15px ;
     gap: 20%;
   }
 
-<<<<<<< HEAD
   .footer-logo {
     width: 100px;
   }
 }
-=======
-    .footer-logo {
-        width: 100px;
-    }
-}
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e

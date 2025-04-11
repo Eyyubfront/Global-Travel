@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import logostwo from "../../assets/Group.png";
 import emoji from "../../assets/inputsfooter/emoji.png";
-import './Footer.css'; // Import the CSS file
+import './Footer.css'; 
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

@@ -25,7 +25,6 @@ const LandingPages = () => {
   return (
     <>
       <Box>
-<<<<<<< HEAD
         <Box
           className="landing-banner"
           style={{ backgroundImage: `url(${landingone})` }}
@@ -40,16 +39,6 @@ const LandingPages = () => {
             <Typography className="landing-subtitle">
               Special offers to suit your plan
             </Typography>
-=======
-        <Box className="landing-banner" style={{ backgroundImage: `url(${landingone})` }}>
-          <div className="App" >
-            <img src={airplane} alt="Uçak" className="airplane" />
-           </div>
-          <Stack className="bacgroundtext" gap="10px" textAlign="center" flexDirection="column">
-            <Typography className="landing-title" variant="h5">Helping Others</Typography>
-            <Typography className="landing-main-title" variant="h2">Live & Travel</Typography>
-            <Typography className="landing-subtitle">Special offers to suit your plan</Typography>
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
           </Stack>
         </Box>
       </Box>
@@ -74,16 +63,12 @@ const LandingPages = () => {
       </Box>
 
       <Box>
-<<<<<<< HEAD
         <Stack
           justifyContent="center"
           gap="30px"
           flexDirection="row"
           flexWrap="wrap"
         >
-=======
-        <Stack className="perfectslanding" justifyContent="center" gap="30px" flexDirection="row" flexWrap="wrap">
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
           {cities.map((city) => (
             <Grid key={city.id} item xs={12} sm={4} md={4}>
               <Perfecttrip id={city.id} title={city.title} src={city.img} />
