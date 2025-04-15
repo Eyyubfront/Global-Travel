@@ -42,12 +42,7 @@ h1{
     }
     .travel_about{
         width: 100%;
-<<<<<<< HEAD
         height: auto;
-=======
-        height: 510px;  
-      
->>>>>>> 66f8a5e9fa61f39b98fc649e5716037902ff6c7e
     }
 }
 @media (min-width: 991px) and (max-width: 1440px) {
