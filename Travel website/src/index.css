@@ -12,11 +12,8 @@ body{
     display: none;
 }
 .header_container{
-    position: fixed;
-    z-index: 9999999;
+    position: sticky;
     background-color: white;
-   
-
 }
 .nav_head {
     border-bottom: 2px solid transparent;  
@@ -72,9 +69,7 @@ body{
     width: 59% !important;
     height:max-content !important;
 }
-.header_container{
-    width: 98%;
-}
+
 
   @media (max-width: 600px) {
     .Container {
