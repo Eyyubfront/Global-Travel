@@ -6,28 +6,36 @@ import { setUser } from "../../features/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
-    const { isSignedIn, user } = useUser();
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const { isSignedIn, user } = useUser();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        if (isSignedIn && user) {
-            const userData = {
-                id: user.id,
-                name: user.fullName,
-                email: user.primaryEmailAddress?.emailAddress || "",
-            };
-            dispatch(setUser(userData));
-            navigate("/");
-        }
-    }, [isSignedIn, user, dispatch, navigate]);
+  useEffect(() => {
+    if (isSignedIn && user) {
+      const userData = {
+        id: user.id,
+        name: user.fullName,
+        email: user.primaryEmailAddress?.emailAddress || "",
+      };
+      dispatch(setUser(userData));
+      navigate("/");
+    }
+  }, [isSignedIn, user, dispatch, navigate]);
 
-    return (
-        <Box display="flex" justifyContent="center" alignItems="center" height="100vh" flexDirection="column">
-            <Typography variant="h4" mb={3}>Login</Typography>
-            <SignIn path="/login" routing="path" />
-        </Box>
-    );
+  return (
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      height="100vh"
+      flexDirection="column"
+    >
+      <Typography variant="h4" mb={3}>
+        Login
+      </Typography>
+      <SignIn path="/login" routing="path" afterSignInUrl="/" />
+    </Box>
+  );
 };
 
 export default LoginPage;

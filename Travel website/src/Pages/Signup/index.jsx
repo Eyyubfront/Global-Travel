@@ -25,7 +25,7 @@ const SignupPage = () => {
     return (
         <Box display="flex" justifyContent="center" alignItems="center" height="100vh" flexDirection="column">
             <Typography variant="h4" mb={3}>Sign Up</Typography>
-            <SignUp path="/signup" routing="path" />
+            <SignUp path="/signup" routing="path" afterSignUpUrl="/" /> 
         </Box>
     );
 };

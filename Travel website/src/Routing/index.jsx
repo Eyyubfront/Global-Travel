@@ -12,29 +12,43 @@ import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import LoginPage from "../Pages/Login";
 import SignupPage from "../Pages/Signup";
-
+import PrivateRoute from "./PrivateRoute";
 
 const Routing = () => {
-    const user = useSelector((state) => state.user); 
-    return (
-        <>
-            <HeadNav user={user} />
-            <Routes>
-                <Route path="/" element={<LandingPages />} />
-                <Route path="/flightlist" element={<Flightlist />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/signup" element={<SignupPage />} />
-                <Route path="/hotellist" element={<Hotellist />} />
-                <Route path="/hotellistabout/:id" element={<Hotellistabout />} />
-                <Route path="/city/:id" element={<CityDetail />} />
-                <Route path="/favourites" element={<Favourites />} />
-                <Route path="/orders" element={<Orders />} />
-      
-            </Routes>
-        </>
-    );
+  const user = useSelector((state) => state.user);
+  return (
+    <>
+      <HeadNav user={user} />
+      <Routes>
+        <Route path="/" element={<LandingPages />} />
+        <Route path="/flightlist" element={<Flightlist />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/hotellist" element={<Hotellist />} />
+        <Route path="/hotellistabout/:id" element={<Hotellistabout />} />
+        <Route path="/city/:id" element={<CityDetail />} />
+        <Route path="/favourites" element={<Favourites />} />
+        <Route
+          path="/favourites"
+          element={
+            <PrivateRoute>
+              <Favourites />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <PrivateRoute>
+              <Orders />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+    </>
+  );
 };
 
 export default Routing;
