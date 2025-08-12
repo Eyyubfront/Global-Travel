@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './contact.css';  
 import emailjs from 'emailjs-com';  
 import Footer from '../../Companents/Footer';
@@ -7,6 +7,8 @@ import { FaHome } from 'react-icons/fa';
 import { Typography, Box } from '@mui/material';
 
 const Contact = () => {
+  const formRef = useRef();
+
   const [formData, setFormData] = useState({
     name: '',
     surname: '',
@@ -28,13 +30,29 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-   
-    emailjs.sendForm('your_service_id', 'your_template_id', e.target, 'your_user_id') 
-      .then((result) => {
-        alert('Mesajınız göndərildi!');
-      }, (error) => {
-        alert('Mesaj göndərilərkən xəta baş verdi. Xahiş edirik sonra təkrar cəhd edin.');
-      });
+    emailjs
+      .sendForm(
+        "service_k9eoqaq",
+        "template_66f1uus",
+        formRef.current,
+        "C1xv5SWMezEeAyo-K"
+      )
+      .then(
+        (result) => {
+          alert("Mesaj başarıyla gönderildi!");
+        },
+        (error) => {
+          alert("Mesaj gönderilirken hata oluştu: " + error.text);
+        }
+      );
+
+    setFormData({
+      name: "",
+      surname: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
   };
 
   return (
@@ -50,7 +68,7 @@ const Contact = () => {
             / Contact
           </Typography>
         </div>
-        <form onSubmit={handleSubmit} className="contact-form">
+        <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
           <div>
             <label>Name:</label>
             <input

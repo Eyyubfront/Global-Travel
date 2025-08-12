@@ -24,12 +24,13 @@ const Routing = () => {
         <Route path="/flightlist" element={<Flightlist />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/signup/*" element={<SignupPage />} />
+        <Route path="/login/*" element={<LoginPage />} />
+
         <Route path="/hotellist" element={<Hotellist />} />
         <Route path="/hotellistabout/:id" element={<Hotellistabout />} />
         <Route path="/city/:id" element={<CityDetail />} />
-        <Route path="/favourites" element={<Favourites />} />
+
         <Route
           path="/favourites"
           element={
@@ -38,6 +39,7 @@ const Routing = () => {
             </PrivateRoute>
           }
         />
+
         <Route
           path="/orders"
           element={

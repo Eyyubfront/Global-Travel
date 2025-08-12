@@ -31,6 +31,10 @@
   .perfecttrip-container {
     width: min-content;
   }
+  .perfecttrip-image{
+    width: 100%;
+    height: 100%;
+  }
   .MuiStack-root{
     justify-content: center;
   }

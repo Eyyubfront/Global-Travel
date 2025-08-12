@@ -10,18 +10,16 @@ import store from "./store.js";
 import { ClerkProvider } from "@clerk/clerk-react";
 
 const PUBLISHABLE_KEY = "pk_test_aW50aW1hdGUtbG9jdXN0LTYuY2xlcmsuYWNjb3VudHMuZGV2JA";
-console.log("PUBLISHABLE_KEY:", PUBLISHABLE_KEY);
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-      <BrowserRouter>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <Provider store={store}>
-            <App />
-          </Provider>
-        </LocalizationProvider>
-      </BrowserRouter>
-    </ClerkProvider>
-  </React.StrictMode>
+  <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+  <BrowserRouter>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </LocalizationProvider>
+  </BrowserRouter>
+</ClerkProvider>
 );

@@ -1,27 +1,15 @@
-import {
-  Box,
-  Stack,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Box, Stack, Typography, Button } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import globlack from "../../assets/globblack.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import BurgerMenu from "../../Companents/Burgermenu";
 import { MdAddShoppingCart } from "react-icons/md";
-import { useDispatch, useSelector } from "react-redux";
-import { removeUser } from "../../features/userSlice";
-
+import { useClerk, useUser } from "@clerk/clerk-react";
 const HeadNav = () => {
-  const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const { signOut } = useClerk();
+  const { user } = useUser();
 
-  const handleLogout = () => {
-    dispatch(removeUser());
-    window.location.reload();
-    navigate("/");
-  };
+ 
 
   return (
     <Stack
@@ -92,8 +80,8 @@ const HeadNav = () => {
 
         {user ? (
           <>
-            <Typography variant="h6">{user.name}</Typography>
-            <Button sx={{ color: "black" }} onClick={handleLogout}>
+            <Typography variant="h6">{user.fullName}</Typography>
+            <Button sx={{ color: "black" }} onClick={()=>signOut()}>
               Logout
             </Button>
           </>
@@ -122,7 +110,6 @@ const HeadNav = () => {
       </Stack>
 
       <BurgerMenu />
-   
     </Stack>
   );
 };

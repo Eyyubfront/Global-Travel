@@ -10,9 +10,7 @@ const Hotellist = () => {
   const [daysValue, setDaysValue] = useState('');
   const [starsValue, setStarsValue] = useState('');
 
-  const handleSearch = () => {
-    console.log("Searching for hotels...");
-  };
+
 
   return (
     <>
