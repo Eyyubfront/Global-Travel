@@ -1,5 +1,5 @@
-import baku from "../assets/cities/baku.jpg";
-import istanbul from "../assets/cities/istanbul.jpg";
+import baku from "../assets/cities/azerbaijan.jpg";
+import istanbul from "../assets/cities/turkiye.jpg";
 import japaneses from "../assets/cities/japaneses.jpg";
 import maldives from "../assets/cities/maldives.jpg";
 import paris from "../assets/cities/paris.jpg";
@@ -10,7 +10,7 @@ import airplaneone from "../assets/cities/airplane/cabinone.jpg";
 import airplanetwo from "../assets/cities/airplane/cabintwo.jpg";
 import airplanethree from "../assets/cities/airplane/cabinthree.jpg";
 import airplanefoor from "../assets/cities/airplane/cabinfoor.jpg";
-import airplanefive from "../assets/cities/airplane/cabinfive.jpg";
+
 
 export const cities = [
     { 
@@ -22,7 +22,7 @@ export const cities = [
         days: 1, 
         rating: 4.5, 
         reviews: 100,
-        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor,airplanefive],
+        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor],
         details: [
             "Stay for 5 days and enjoy a 50% cancellation fee if you cancel your reservation.",
             "Alcohol consumption is strictly prohibited during the tour, except in hotels.",
@@ -40,7 +40,7 @@ export const cities = [
         days: 2, 
         rating: 4.7, 
         reviews: 150,
-        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor,airplanefive],
+        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor],
         details: [
             "A minimum stay of 3 nights is required to enjoy special offers.",
             "Guests are encouraged to explore the local culture and attractions.",
@@ -58,7 +58,7 @@ export const cities = [
         days: 3, 
         rating: 4.2, 
         reviews: 80,
-        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor,airplanefive],
+        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor],
         details: [
             "Guests can enjoy a complimentary breakfast during their stay.",
             "A 30% fee will be applied for cancellations made less than 48 hours before check-in.",
@@ -76,7 +76,7 @@ export const cities = [
         days: 4, 
         rating: 4.8, 
         reviews: 200,
-        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor,airplanefive],
+        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor],
         details: [
             "A unique underwater dining experience is available for guests.",
             "Guests must pay a 50% deposit to secure their booking.",
@@ -94,7 +94,7 @@ export const cities = [
         days: 3, 
         rating: 4.9, 
         reviews: 50,
-        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor,airplanefive],
+        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor],
         details: [
             "Free guided city tours are available for guests staying more than 3 nights.",
             "A 40% cancellation fee will apply if canceled less than 24 hours before check-in.",
@@ -112,7 +112,7 @@ export const cities = [
         days: 4, 
         rating: 4.6, 
         reviews: 120,
-        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor,airplanefive],
+        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor],
         details: [
             "Enjoy a complimentary dinner cruise along the Bosphorus for stays over 4 nights.",
             "A cancellation fee of 50% applies to changes made within 72 hours.",
@@ -125,12 +125,12 @@ export const cities = [
         id: 6, 
         img: sweden, 
         title: "Sweden", 
-        citycountry: "Stockholm, Sweden", // Daha spesifik şehir ve ülke bilgisi
+        citycountry: "Stockholm, Sweden", 
         price: 500, 
         days: 7, 
         rating: 4.9, 
         reviews: 140,
-        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor, airplanefive],
+        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor],
         details: [
             "Enjoy a complimentary dinner cruise along the Bosphorus for stays over 4 nights.",
             "A cancellation fee of 50% applies to changes made within 72 hours.",
@@ -148,12 +148,12 @@ export const cities = [
         id: 7, 
         img: italys, 
         title: "Italy", 
-        citycountry: "Rome, Italy", // Daha spesifik şehir ve ülke bilgisi
+        citycountry: "Rome, Italy", 
         price: 500, 
         days: 7, 
         rating: 4.9, 
         reviews: 140,
-        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor, airplanefive],
+        airplanes: [airplaneone, airplanetwo, airplanethree, airplanefoor],
         details: [
             "Enjoy a complimentary dinner cruise along the Bosphorus for stays over 4 nights.",
             "A cancellation fee of 50% applies to changes made within 72 hours.",

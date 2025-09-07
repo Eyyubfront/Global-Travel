@@ -120,7 +120,7 @@ const CityDetail = () => {
                 </Box>
 
           
-                <Stack alignItems="center" flexDirection="row" justifyContent="center" flexWrap="wrap">
+                <Stack className='cityairpalne_photo' alignItems="center" sx={{gap:"3px"}} flexDirection="row" justifyContent="center" flexWrap="wrap">
                     {city.airplanes.map((plane, index) => (
                         <img key={index} src={plane} className="planeimage" alt={`Plane ${index + 1}`} />
                     ))}

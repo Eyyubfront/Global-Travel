@@ -129,7 +129,7 @@
 @media (max-width: 991px) {
   .footer-container {
     padding: 20px;
-    margin-top: 22% !important;
+    /* margin-top: 22% !important; */
   }
 
   .footer-box {

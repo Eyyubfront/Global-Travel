@@ -1,6 +1,6 @@
 import React from 'react';
-import hotelsone from "../../assets/showcards/hotelsone.png";
-import hotelstwo from "../../assets/showcards/hotelstwo.png";
+import cardsone from "../../assets/showcards/airport.png";
+import cardstwo from "../../assets/showcards/hotel.jpg";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import './Showcards.css'; 
@@ -10,7 +10,7 @@ const Showcards = () => {
   return (
     <>
       <Stack className="showcards-container" flexDirection="row"  justifyContent="center" gap="13%">
-        <Box className="hotels-card" sx={{ backgroundImage: `url(${hotelsone})` }}>
+        <Box className="hotels-card" sx={{ backgroundImage: `url(${cardsone})` }}>
           <Stack className="card-content" flexDirection="column"gap="20px" >
           
             <Link style={{ textDecoration: "none" }} to="/flightlist">
@@ -24,7 +24,7 @@ const Showcards = () => {
           </Stack>
         </Box>
 
-        <Box className="hotels-card" sx={{ backgroundImage: `url(${hotelstwo})` }}>
+        <Box className="hotels-card" sx={{ backgroundImage: `url(${cardstwo})` }}>
           <Stack className="card-content" gap="20px" flexDirection="column" >
        
             <Link style={{ textDecoration: "none" }} to="/hotellist">

@@ -9,7 +9,7 @@
   background-size: cover;
   position: relative;
   width: 500px !important;
-  height: 390px !important;
+  height: 490px !important;
   border-radius: 12px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
   transition: transform 0.3s; 
@@ -19,8 +19,8 @@
 
 .card-content {
   position: absolute;
-  left: 140px;
-  top: 320px;
+
+  top: 420px;
 }
 
 .card-title {
@@ -53,11 +53,7 @@
 }
 
 @media (max-width: 600px) {
- 
-  .card-content {
-    left: auto;
-    top: 420px;
-  }
+
   .card-description {
     width: 250px !important;
   }
@@ -72,6 +68,8 @@
     flex-direction: column !important;
     align-items: center !important;
     gap: 15px !important;
+    justify-content: center;
+    padding: 10px;
   }
   .hotels-card {
     width: 100% !important;
@@ -84,5 +82,7 @@
     flex-direction: row !important;
     align-items: center !important;
     gap: 15px !important;
+    justify-content: center;
+   
   }
 }
