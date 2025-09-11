@@ -12,11 +12,15 @@ import CheckIcon from '@mui/icons-material/Check';
 import { addOrder } from '../../features/ordersSlice';
 import OrderModal from '../../Companents/OrderModal';
 import './CityDetail.css';
+
+import { useUser } from "@clerk/clerk-react"; 
 const CityDetail = () => {
     const { id } = useParams();
+    const { isSignedIn } = useUser();
     const dispatch = useDispatch();
     const favorites = useSelector(state => state.favorites);
     const user = useSelector(state => state.user); 
+    console.log("us",user);
     const city = cities.find(city => city.id === Number(id));
 
     const [message, setMessage] = useState(null);
@@ -30,7 +34,7 @@ const CityDetail = () => {
 
     const isFavorite = favorites.some(fav => fav.id === city.id);
     const handleToggleFavorite = () => {
-        if (!user) {
+        if (!isSignedIn) {
             setMessage('Please log in to add to favorites');
             setFadeOut(false);
             setTimeout(() => setFadeOut(true), 3000);
@@ -49,7 +53,7 @@ const CityDetail = () => {
     };
 
     const handleOrderClick = () => {
-        if (!user) {
+        if (!isSignedIn) {
             setMessage('Please log in to place an order');
             setFadeOut(false);
             setTimeout(() => setFadeOut(true), 3000);

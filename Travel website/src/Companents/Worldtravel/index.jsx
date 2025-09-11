@@ -9,10 +9,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, removeFavorite } from '../../features/favoritesSlice';
 import './Worldtravel.css';
 
+import { useUser } from "@clerk/clerk-react"; 
+
 const Worldtravel = ({ priceFilter, priceValue, daysValue }) => {
+    const { isSignedIn } = useUser();
+
+    console.log("Is Signed In:", isSignedIn);
     const dispatch = useDispatch();
     const favorites = useSelector(state => state.favorites);
-    const user = useSelector(state => state.user); 
     const [message, setMessage] = useState(null);
     const [fadeOut, setFadeOut] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
@@ -41,7 +45,7 @@ const Worldtravel = ({ priceFilter, priceValue, daysValue }) => {
     );
 
     const handleAddToFavorites = (city) => {
-        if (!user) {
+        if (!isSignedIn) {
             setMessage('You must be logged in to perform this action');
             setFadeOut(false);
             setTimeout(() => setFadeOut(true), 3000);

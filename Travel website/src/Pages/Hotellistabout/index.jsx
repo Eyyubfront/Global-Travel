@@ -14,12 +14,14 @@ import { addOrder } from '../../features/ordersSlice';
 import OrderModal from '../../Companents/OrderModal';
 import './hotellistabout.css';
 
+import { useUser } from "@clerk/clerk-react"; 
+
 const Hotellistabout = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const favorites = useSelector(state => state.favorites);
-    const user = useSelector(state => state.user);
     const selectedHotel = hotels.find(h => h.id === parseInt(id));
+    const { isSignedIn } = useUser();
 
     const [message, setMessage] = useState(null);
     const [fadeOut, setFadeOut] = useState(false);
@@ -31,7 +33,7 @@ const Hotellistabout = () => {
     }
 
     const handleToggleFavorite = () => {
-        if (!user) {
+        if (!isSignedIn) {
             setMessage('Please log in to add to favorites');
             setFadeOut(false);
             setTimeout(() => setFadeOut(true), 3000);
@@ -50,7 +52,7 @@ const Hotellistabout = () => {
     };
 
     const handleOrderClick = () => {
-        if (!user) {
+        if (!isSignedIn) {
             setMessage('Please log in to place an order');
             setFadeOut(false);
             setTimeout(() => setFadeOut(true), 3000);
